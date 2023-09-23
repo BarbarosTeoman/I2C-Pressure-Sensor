@@ -1,0 +1,1218 @@
+Loading plugins phase: Elapsed time ==> 0s.300ms
+<CYPRESSTAG name="CyDsfit arguments...">
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\PressureSensor.cyprj -d CY8C4148AZI-S455 -s C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+</CYPRESSTAG>
+<CYPRESSTAG name="Design elaboration results...">
+</CYPRESSTAG>
+Elaboration phase: Elapsed time ==> 2s.116ms
+<CYPRESSTAG name="HDL generation results...">
+</CYPRESSTAG>
+HDL generation phase: Elapsed time ==> 0s.061ms
+<CYPRESSTAG name="Synthesis results...">
+
+     | | | | | | |
+   _________________
+  -|               |-
+  -|               |-
+  -|               |-
+  -|    CYPRESS    |-
+  -|               |-
+  -|               |-   Warp Verilog Synthesis Compiler: Version 6.3 IR 41
+  -|               |-   Copyright (C) 1991-2001 Cypress Semiconductor
+   |_______________|
+     | | | | | | |
+
+======================================================================
+Compiling:  PressureSensor.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\bin\warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\PressureSensor.cyprj -dcpsoc3 PressureSensor.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  PressureSensor.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\bin\warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\PressureSensor.cyprj -dcpsoc3 PressureSensor.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  PressureSensor.v
+Program  :   vlogfe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\PressureSensor.cyprj -dcpsoc3 -verilog PressureSensor.v
+======================================================================
+
+vlogfe V6.3 IR 41:  Verilog parser
+Fri Sep 15 16:17:03 2023
+
+
+======================================================================
+Compiling:  PressureSensor.v
+Program  :   vpp
+Options  :    -yv2 -q10 PressureSensor.v
+======================================================================
+
+vpp V6.3 IR 41:  Verilog Pre-Processor
+Fri Sep 15 16:17:03 2023
+
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'
+
+vpp:  No errors.
+
+Library 'work' => directory 'lcpsoc3'
+General_symbol_table
+General_symbol_table
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Using control file 'PressureSensor.ctl'.
+
+vlogfe:  No errors.
+
+
+======================================================================
+Compiling:  PressureSensor.v
+Program  :   tovif
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\PressureSensor.cyprj -dcpsoc3 -verilog PressureSensor.v
+======================================================================
+
+tovif V6.3 IR 41:  High-level synthesis
+Fri Sep 15 16:17:03 2023
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\codegentemp\PressureSensor.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\codegentemp\PressureSensor.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
+
+tovif:  No errors.
+
+
+======================================================================
+Compiling:  PressureSensor.v
+Program  :   topld
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\PressureSensor.cyprj -dcpsoc3 -verilog PressureSensor.v
+======================================================================
+
+topld V6.3 IR 41:  Synthesis and optimization
+Fri Sep 15 16:17:04 2023
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\codegentemp\PressureSensor.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\codegentemp\PressureSensor.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
+
+----------------------------------------------------------
+Detecting unused logic.
+----------------------------------------------------------
+    User names
+	\I2C:Net_1257\
+	\I2C:uncfg_rx_irq\
+	\I2C:Net_1099\
+	\I2C:Net_1258\
+	Net_6
+	Net_7
+	Net_8
+	Net_9
+	Net_10
+	Net_11
+	Net_12
+	Net_15
+	Net_16
+	Net_23
+	\CapSense:Net_147\
+	\CapSense:Net_146\
+
+
+Deleted 16 User equations/components.
+Deleted 0 Synthesized equations/components.
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+Aliasing one to tmpOE__Pin_1_net_0
+Aliasing \I2C:select_s_wire\ to zero
+Aliasing \I2C:rx_wire\ to zero
+Aliasing \I2C:sclk_s_wire\ to zero
+Aliasing \I2C:mosi_s_wire\ to zero
+Aliasing \I2C:miso_m_wire\ to zero
+Aliasing \I2C:tmpOE__sda_net_0\ to tmpOE__Pin_1_net_0
+Aliasing \I2C:tmpOE__scl_net_0\ to tmpOE__Pin_1_net_0
+Aliasing \I2C:cts_wire\ to zero
+Aliasing \CapSense:Net_95\ to zero
+Aliasing \CapSense:Net_94\ to zero
+Aliasing \CapSense:Net_93\ to zero
+Aliasing \CapSense:Net_92\ to zero
+Aliasing \CapSense:tmpOE__Sns_net_0\ to tmpOE__Pin_1_net_0
+Aliasing \CapSense:tmpOE__Shield_net_0\ to tmpOE__Pin_1_net_0
+Aliasing \CapSense:Net_57\ to zero
+Aliasing \CapSense:Net_56\ to zero
+Aliasing \CapSense:Net_55\ to zero
+Aliasing \CapSense:Net_54\ to zero
+Aliasing \CapSense:Net_44\ to zero
+Aliasing \CapSense:Net_46\ to zero
+Aliasing \CapSense:Net_47\ to zero
+Aliasing \CapSense:Net_48\ to zero
+Aliasing \CapSense:tmpOE__Cmod_net_0\ to tmpOE__Pin_1_net_0
+Removing Lhs of wire one[6] = tmpOE__Pin_1_net_0[1]
+Removing Lhs of wire \I2C:select_s_wire\[10] = zero[2]
+Removing Lhs of wire \I2C:rx_wire\[11] = zero[2]
+Removing Lhs of wire \I2C:Net_1170\[14] = \I2C:Net_847\[9]
+Removing Lhs of wire \I2C:sclk_s_wire\[15] = zero[2]
+Removing Lhs of wire \I2C:mosi_s_wire\[16] = zero[2]
+Removing Lhs of wire \I2C:miso_m_wire\[17] = zero[2]
+Removing Lhs of wire \I2C:tmpOE__sda_net_0\[19] = tmpOE__Pin_1_net_0[1]
+Removing Lhs of wire \I2C:tmpOE__scl_net_0\[25] = tmpOE__Pin_1_net_0[1]
+Removing Lhs of wire \I2C:cts_wire\[34] = zero[2]
+Removing Lhs of wire \CapSense:Net_95\[76] = zero[2]
+Removing Lhs of wire \CapSense:Net_94\[77] = zero[2]
+Removing Lhs of wire \CapSense:Net_93\[81] = zero[2]
+Removing Lhs of wire \CapSense:Net_92\[101] = zero[2]
+Removing Lhs of wire \CapSense:tmpOE__Sns_net_0\[104] = tmpOE__Pin_1_net_0[1]
+Removing Lhs of wire \CapSense:tmpOE__Shield_net_0\[110] = tmpOE__Pin_1_net_0[1]
+Removing Lhs of wire \CapSense:Net_57\[118] = zero[2]
+Removing Lhs of wire \CapSense:Net_56\[119] = zero[2]
+Removing Lhs of wire \CapSense:Net_55\[120] = zero[2]
+Removing Lhs of wire \CapSense:Net_54\[121] = zero[2]
+Removing Lhs of wire \CapSense:Net_44\[124] = zero[2]
+Removing Lhs of wire \CapSense:Net_46\[125] = zero[2]
+Removing Lhs of wire \CapSense:Net_47\[126] = zero[2]
+Removing Lhs of wire \CapSense:Net_48\[127] = zero[2]
+Removing Lhs of wire \CapSense:tmpOE__Cmod_net_0\[129] = tmpOE__Pin_1_net_0[1]
+
+------------------------------------------------------
+Aliased 0 equations, 25 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+Substituting virtuals - pass 1:
+
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 0 signals.
+	Turned 0 signals into soft nodes.
+	Maximum default expansion cost was set at 3.
+----------------------------------------------------------
+
+topld:  No errors.
+
+CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp
+Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\bin\warp.exe
+Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\PressureSensor.cyprj -dcpsoc3 PressureSensor.v -verilog
+</CYPRESSTAG>
+Warp synthesis phase: Elapsed time ==> 0s.572ms
+<CYPRESSTAG name="Fitter results...">
+<CYPRESSTAG name="Fitter startup details...">
+cyp3fit: V4.4.0.80, Family: PSoC3, Started at: Friday, 15 September 2023 16:17:04
+Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\PressureSensor.cyprj -d CY8C4148AZI-S455 PressureSensor.v -verilog
+</CYPRESSTAG>
+<CYPRESSTAG name="Design parsing">
+Design parsing phase: Elapsed time ==> 0s.016ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Tech Mapping">
+<CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
+<CYPRESSTAG name="Global Clock Selection" icon="FILE_RPT_TECHM">
+    Fixed Function Clock 5: Automatic-assigning  clock 'CapSense_ModClk'. Signal=\CapSense:Net_1423_ff5\
+    Fixed Function Clock 0: Automatic-assigning  clock 'I2C_SCBCLK'. Signal=\I2C:Net_847_ff0\
+<CYPRESSTAG name="UDB Clock/Enable Remapping Results">
+</CYPRESSTAG>
+</CYPRESSTAG>
+
+Removing unused cells resulting from optimization
+Done removing unused cells.
+<CYPRESSTAG name="Duplicate Macrocell detection">
+</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Duplicate Macrocell detection">
+</CYPRESSTAG>
+<CYPRESSTAG name="Design Equations" icon="FILE_RPT_EQUATION">
+
+------------------------------------------------------------
+Design Equations
+------------------------------------------------------------
+    <CYPRESSTAG name="Pin listing">
+
+    ------------------------------------------------------------
+    Pin listing
+    ------------------------------------------------------------
+
+    Pin : Name = Pin_1(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: DIGITAL
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => Pin_1(0)__PA ,
+            pad => Pin_1(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = \I2C:sda(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: OPEN_DRAIN_LO
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: DIGITAL
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \I2C:sda(0)\__PA ,
+            fb => Net_21 ,
+            pad => \I2C:sda(0)_PAD\ );
+        Properties:
+        {
+        }
+
+    Pin : Name = \I2C:scl(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: OPEN_DRAIN_LO
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: DIGITAL
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \I2C:scl(0)\__PA ,
+            fb => Net_20 ,
+            pad => \I2C:scl(0)_PAD\ );
+        Properties:
+        {
+        }
+
+    Pin : Name = \CapSense:Sns(0)\
+        Attributes:
+            Alias: Button0_Sns0
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: HI_Z_ANALOG
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: False
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: ANALOG
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \CapSense:Sns(0)\__PA ,
+            analog_term => \CapSense:CSD\_\CapSense:Sns(0)\ ,
+            pad => \CapSense:Sns(0)_PAD\ );
+        Properties:
+        {
+        }
+
+    Pin : Name = \CapSense:Shield(0)\
+        Attributes:
+            Alias: Shield
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: HI_Z_ANALOG
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: False
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: ANALOG
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \CapSense:Shield(0)\__PA ,
+            analog_term => \CapSense:Net_122\ ,
+            pad => \CapSense:Shield(0)_PAD\ );
+        Properties:
+        {
+        }
+
+    Pin : Name = \CapSense:Cmod(0)\
+        Attributes:
+            Alias: Cmod
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: HI_Z_ANALOG
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: False
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: ANALOG
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \CapSense:Cmod(0)\__PA ,
+            analog_term => \CapSense:dedicated_io_bus_0\ ,
+            pad => \CapSense:Cmod(0)_PAD\ );
+        Properties:
+        {
+        }
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Macrocell listing" icon="FILE_RPT_EQUATION">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Datapath listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Status register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="StatusI register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Sync listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Control register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Count7 listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="DRQ listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Interrupt listing">
+
+    ------------------------------------------------------------
+    Interrupt listing
+    ------------------------------------------------------------
+
+    interrupt: Name =\I2C:SCB_IRQ\
+        PORT MAP (
+            interrupt => Net_4 );
+        Properties:
+        {
+            int_type = "10"
+            is_nmi = 0
+        }
+
+    interrupt: Name =\CapSense:ISR\
+        PORT MAP (
+            interrupt => \CapSense:Net_120\ );
+        Properties:
+        {
+            int_type = "10"
+            is_nmi = 0
+        }
+    </CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Technology mapping summary" expanded>
+
+------------------------------------------------------------
+Technology mapping summary
+------------------------------------------------------------
+
+Resource Type                 : Used : Free :  Max :  % Used
+============================================================
+Interrupts                    :    2 :   27 :   29 :  6.90 %
+IO                            :    8 :   46 :   54 : 14.81 %
+Segment LCD                   :    0 :    1 :    1 :  0.00 %
+CapSense                      :    1 :    0 :    1 : 100.00 %
+Die Temp                      :    0 :    1 :    1 :  0.00 %
+Serial Communication (SCB)    :    1 :    4 :    5 : 20.00 %
+DMA Channels                  :    0 :    8 :    8 :  0.00 %
+Timer/Counter/PWM             :    0 :    8 :    8 :  0.00 %
+Smart IO Ports                :    0 :    2 :    2 :  0.00 %
+Comparator/Opamp              :    0 :    2 :    2 :  0.00 %
+Comparator                    :    1 :    0 :    1 : 100.00 %
+LP Comparator                 :    0 :    2 :    2 :  0.00 %
+SAR ADC                       :    0 :    1 :    1 :  0.00 %
+DAC                           :      :      :      :        
+  7-bit IDAC                  :    2 :    0 :    2 : 100.00 %
+</CYPRESSTAG>
+Technology Mapping: Elapsed time ==> 0s.039ms
+Tech Mapping phase: Elapsed time ==> 0s.056ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Placement">
+<CYPRESSTAG name="FFB & IO Pre Placement">
+<CYPRESSTAG name="Placement" icon="FILE_RPT_PLACEMENT">
+
+Cell                                : Block                              
+=========================================================================
+Pin_1(0)                            : [IOP=(1)][IoId=(6)]                
+\I2C:sda(0)\                        : [IOP=(1)][IoId=(1)]                
+\I2C:scl(0)\                        : [IOP=(1)][IoId=(0)]                
+\CapSense:Sns(0)\                   : [IOP=(0)][IoId=(4)]                
+\CapSense:Shield(0)\                : [IOP=(4)][IoId=(1)]                
+\CapSense:Cmod(0)\                  : [IOP=(4)][IoId=(2)]                
+ClockGenBlock                       : CLK_GEN_[FFB(CLK_GEN,0)]           
+\I2C:SCB\                           : SCB_[FFB(SCB,0)]                   
+\CapSense:CSD\                      : CSD_[FFB(CSD,0)]                   
+\CapSense:IDACMod\                  : CSIDAC7_[FFB(CSIDAC7,0)]           
+\CapSense:IDACComp\                 : CSIDAC7_[FFB(CSIDAC7,1)]           
+
+</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Real Analog Placement">
+Elapsed time ==> 0.4756038s
+</CYPRESSTAG>
+Analog Placement phase: Elapsed time ==> 0s.746ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Routing">
+<CYPRESSTAG name="Analog Routing">
+Route success=True, Iterations=3 Elapsed=0.0271093 secs
+</CYPRESSTAG>
+Analog Routing phase: Elapsed time ==> 0s.074ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Code Generation">
+============ Analog Final Answer Routes ============
+Dump of CyAnalogRoutingResultsDB
+Map of net to items {
+  Net: \CapSense:Net_122\ {
+    CSD0_shield_internal
+    swh_8
+    shield0
+    BYB
+    amuxbusb_csd
+    P4_P51
+    p4_1
+  }
+  Net: \CapSense:Net_150\ {
+  }
+  Net: \CapSense:Net_2\ {
+    CSD0_sense_internal
+  }
+  Net: \CapSense:Net_341\ {
+    idac1_out
+    IAIB
+    idac0_out
+    swhv_3
+    sense0
+    swh_7
+  }
+  Net: \CapSense:dedicated_io_bus_0\ {
+    BYA
+    amuxbusa_csd
+    P4_P42
+    p4_2
+  }
+  Net: \CapSense:CSD\_\CapSense:Sns(0)\ {
+    p0_4
+  }
+  Net: AMuxNet::\CapSense:CSD\_sensormux_\CapSense:Sns(0)\ {
+    P0_P44
+    P0_P54
+  }
+}
+Map of item to net {
+  CSD0_shield_internal                             -> \CapSense:Net_122\
+  swh_8                                            -> \CapSense:Net_122\
+  shield0                                          -> \CapSense:Net_122\
+  BYB                                              -> \CapSense:Net_122\
+  amuxbusb_csd                                     -> \CapSense:Net_122\
+  P4_P51                                           -> \CapSense:Net_122\
+  p4_1                                             -> \CapSense:Net_122\
+  CSD0_sense_internal                              -> \CapSense:Net_2\
+  idac1_out                                        -> \CapSense:Net_341\
+  IAIB                                             -> \CapSense:Net_341\
+  idac0_out                                        -> \CapSense:Net_341\
+  swhv_3                                           -> \CapSense:Net_341\
+  sense0                                           -> \CapSense:Net_341\
+  swh_7                                            -> \CapSense:Net_341\
+  BYA                                              -> \CapSense:dedicated_io_bus_0\
+  amuxbusa_csd                                     -> \CapSense:dedicated_io_bus_0\
+  P4_P42                                           -> \CapSense:dedicated_io_bus_0\
+  p4_2                                             -> \CapSense:dedicated_io_bus_0\
+  p0_4                                             -> \CapSense:CSD\_\CapSense:Sns(0)\
+  P0_P44                                           -> AMuxNet::\CapSense:CSD\_sensormux_\CapSense:Sns(0)\
+  P0_P54                                           -> AMuxNet::\CapSense:CSD\_sensormux_\CapSense:Sns(0)\
+}
+Mux Info {
+  Mux: \CapSense:CSD\_sensormux_\CapSense:Sns(0)\ {
+     Mouth: \CapSense:CSD\_\CapSense:Sns(0)\
+     Guts:  AMuxNet::\CapSense:CSD\_sensormux_\CapSense:Sns(0)\
+     IsSingleSwitching: True
+     IsStaticSwitching: False
+     IsAtMostOneSwitch: True
+    Arm: 0 {
+      Net:   \CapSense:Net_2\
+      Outer: __open__
+      Inner: __open__
+      Path {
+        P0_P44
+        amuxbusa_csd
+        BYA
+        sense0
+        swh_7
+        CSD0_sense_internal
+      }
+    }
+    Arm: 1 {
+      Net:   \CapSense:Net_122\
+      Outer: __open__
+      Inner: __open__
+      Path {
+        P0_P54
+        amuxbusb_csd
+      }
+    }
+  }
+}
+Analog Code Generation phase: Elapsed time ==> 0s.031ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Placement">
+<CYPRESSTAG name="Detailed placement messages">
+I2076: Total run-time: 0.2 sec.
+
+</CYPRESSTAG>
+<CYPRESSTAG name="PLD Packing">
+<CYPRESSTAG name="PLD Packing Summary">
+No PLDs were packed.
+</CYPRESSTAG>
+PLD Packing: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Partitioning">
+<CYPRESSTAG name="Initial Partitioning Summary">
+Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+<CYPRESSTAG name="Final Partitioning Summary">
+Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+Partitioning: Elapsed time ==> 0s.013ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Final Placement Summary">
+
+------------------------------------------------------------
+Final Placement Summary
+------------------------------------------------------------
+
+       Resource Type :      Count : Avg Inputs : Avg Outputs
+    ========================================================
+                 UDB :          0 :       0.00 :       0.00
+<CYPRESSTAG name="Final Placement Details">
+<CYPRESSTAG name="Component Details">
+
+------------------------------------------------------------
+Component Placement Details
+------------------------------------------------------------
+Intr container @ [IntrContainer=(0)]: 
+  Intr@ [IntrContainer=(0)][IntrId=(7)] 
+    interrupt: Name =\I2C:SCB_IRQ\
+        PORT MAP (
+            interrupt => Net_4 );
+        Properties:
+        {
+            int_type = "10"
+            is_nmi = 0
+        }
+  Intr@ [IntrContainer=(0)][IntrId=(17)] 
+    interrupt: Name =\CapSense:ISR\
+        PORT MAP (
+            interrupt => \CapSense:Net_120\ );
+        Properties:
+        {
+            int_type = "10"
+            is_nmi = 0
+        }
+Drq container @ [DrqContainer=(0)]: empty
+Port 0 contains the following IO cells:
+[IoId=4]: 
+Pin : Name = \CapSense:Sns(0)\
+    Attributes:
+        Alias: Button0_Sns0
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_ANALOG
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: False
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: ANALOG
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \CapSense:Sns(0)\__PA ,
+        analog_term => \CapSense:CSD\_\CapSense:Sns(0)\ ,
+        pad => \CapSense:Sns(0)_PAD\ );
+    Properties:
+    {
+    }
+
+Port 1 contains the following IO cells:
+[IoId=0]: 
+Pin : Name = \I2C:scl(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: OPEN_DRAIN_LO
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: DIGITAL
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \I2C:scl(0)\__PA ,
+        fb => Net_20 ,
+        pad => \I2C:scl(0)_PAD\ );
+    Properties:
+    {
+    }
+
+[IoId=1]: 
+Pin : Name = \I2C:sda(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: OPEN_DRAIN_LO
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: DIGITAL
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \I2C:sda(0)\__PA ,
+        fb => Net_21 ,
+        pad => \I2C:sda(0)_PAD\ );
+    Properties:
+    {
+    }
+
+[IoId=6]: 
+Pin : Name = Pin_1(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: DIGITAL
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => Pin_1(0)__PA ,
+        pad => Pin_1(0)_PAD );
+    Properties:
+    {
+    }
+
+Port 2 contains the following IO cells:
+Port 3 contains the following IO cells:
+Port 4 contains the following IO cells:
+[IoId=1]: 
+Pin : Name = \CapSense:Shield(0)\
+    Attributes:
+        Alias: Shield
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_ANALOG
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: False
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: ANALOG
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \CapSense:Shield(0)\__PA ,
+        analog_term => \CapSense:Net_122\ ,
+        pad => \CapSense:Shield(0)_PAD\ );
+    Properties:
+    {
+    }
+
+[IoId=2]: 
+Pin : Name = \CapSense:Cmod(0)\
+    Attributes:
+        Alias: Cmod
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_ANALOG
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: False
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: ANALOG
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \CapSense:Cmod(0)\__PA ,
+        analog_term => \CapSense:Net_2\ ,
+        pad => \CapSense:Cmod(0)_PAD\ );
+    Properties:
+    {
+    }
+
+Port 5 contains the following IO cells:
+Port 6 contains the following IO cells:
+Port 7 contains the following IO cells:
+Clock group 0: 
+    Clock Block @ F(Clock,0): 
+    m0s8clockblockcell: Name =ClockBlock
+        PORT MAP (
+            hfclk => ClockBlock_HFClk ,
+            imo => ClockBlock_IMO ,
+            ext => ClockBlock_ExtClk ,
+            sysclk => ClockBlock_SysClk ,
+            eco => ClockBlock_ECO ,
+            pll => ClockBlock_PLL0 ,
+            ilo => ClockBlock_ILO ,
+            lfclk => ClockBlock_LFClk ,
+            wco => ClockBlock_WCO ,
+            ff_div_5 => \CapSense:Net_1423_ff5\ ,
+            ff_div_0 => \I2C:Net_847_ff0\ );
+        Properties:
+        {
+        }
+LCD group 0: empty
+PICU group 0: empty
+Vref group 0: empty
+LPCOMP group 0: empty
+SCB group 0: 
+    SCB Block @ F(SCB,0): 
+    m0s8scbcell: Name =\I2C:SCB\
+        PORT MAP (
+            clock => \I2C:Net_847_ff0\ ,
+            interrupt => Net_4 ,
+            uart_tx => \I2C:tx_wire\ ,
+            uart_rts => \I2C:rts_wire\ ,
+            mosi_m => \I2C:mosi_m_wire\ ,
+            select_m_3 => \I2C:select_m_wire_3\ ,
+            select_m_2 => \I2C:select_m_wire_2\ ,
+            select_m_1 => \I2C:select_m_wire_1\ ,
+            select_m_0 => \I2C:select_m_wire_0\ ,
+            sclk_m => \I2C:sclk_m_wire\ ,
+            miso_s => \I2C:miso_s_wire\ ,
+            i2c_scl => Net_20 ,
+            i2c_sda => Net_21 ,
+            tr_tx_req => Net_22 ,
+            tr_rx_req => Net_13 );
+        Properties:
+        {
+            cy_registers = ""
+            scb_mode = 0
+        }
+CSD group 0: 
+    CapSense @ F(CSD,0): 
+    p4csdcell: Name =\CapSense:CSD\
+        PORT MAP (
+            source => \CapSense:Net_2\ ,
+            shield => \CapSense:Net_122\ ,
+            csh => \CapSense:Net_84\ ,
+            cmod => \CapSense:Net_86\ ,
+            shield_pad => \CapSense:Net_15\ ,
+            vref_ext => \CapSense:Net_150\ ,
+            sense_out => \CapSense:Net_317\ ,
+            sample_out => \CapSense:Net_316\ ,
+            dsi_csh_tank => \CapSense:Net_323\ ,
+            dsi_cmod => \CapSense:Net_322\ ,
+            dsi_hscmp => \CapSense:Net_321\ ,
+            dsi_sampling => \CapSense:Net_318\ ,
+            dsi_adc_on => \CapSense:Net_319\ ,
+            tr_adc_done => \CapSense:Net_354\ ,
+            dsi_count_15 => \CapSense:Net_320_15\ ,
+            dsi_count_14 => \CapSense:Net_320_14\ ,
+            dsi_count_13 => \CapSense:Net_320_13\ ,
+            dsi_count_12 => \CapSense:Net_320_12\ ,
+            dsi_count_11 => \CapSense:Net_320_11\ ,
+            dsi_count_10 => \CapSense:Net_320_10\ ,
+            dsi_count_9 => \CapSense:Net_320_9\ ,
+            dsi_count_8 => \CapSense:Net_320_8\ ,
+            dsi_count_7 => \CapSense:Net_320_7\ ,
+            dsi_count_6 => \CapSense:Net_320_6\ ,
+            dsi_count_5 => \CapSense:Net_320_5\ ,
+            dsi_count_4 => \CapSense:Net_320_4\ ,
+            dsi_count_3 => \CapSense:Net_320_3\ ,
+            dsi_count_2 => \CapSense:Net_320_2\ ,
+            dsi_count_1 => \CapSense:Net_320_1\ ,
+            dsi_count_0 => \CapSense:Net_320_0\ ,
+            clk => \CapSense:Net_1423_ff5\ ,
+            irq => \CapSense:Net_120\ );
+        Properties:
+        {
+            adc_channel_count = 1
+            cy_registers = ""
+            dedicated_io_count = 2
+            ganged_csx = 0
+            is_capsense = 1
+            is_cmod_charge = 0
+            is_csh_charge = 0
+            is_mutual = 0
+            rx_count = 1
+            sense_as_shield = 1
+            sensors_count = 1
+            shield_as_sense = 0
+            shield_count = 1
+            tx_count = 1
+        }
+CSIDAC7 group 0: 
+    7-bit IDAC @ F(CSIDAC7,0): 
+    p4csidacV2cell: Name =\CapSense:IDACMod\
+        PORT MAP (
+            iout => \CapSense:Net_2\ );
+        Properties:
+        {
+            cy_registers = ""
+            leg3_needed = 0
+        }
+    7-bit IDAC @ F(CSIDAC7,1): 
+    p4csidacV2cell: Name =\CapSense:IDACComp\
+        PORT MAP (
+            iout => \CapSense:Net_2\ );
+        Properties:
+        {
+            cy_registers = ""
+            leg3_needed = 1
+        }
+TCPWM group 0: empty
+OA group 0: empty
+TEMP group 0: empty
+SARADC group 0: empty
+CLK_GEN group 0: 
+    M0S8 Clock Gen Block @ F(CLK_GEN,0): 
+    m0s8clockgenblockcell: Name =ClockGenBlock
+        PORT MAP (
+             );
+        Properties:
+        {
+        }
+LPCOMPBLOCK group 0: empty
+PASSBLOCK group 0: empty
+WCO group 0: empty
+SmartIO group 0: empty
+SRSS group 0: empty
+CPUSS group 0: empty
+IOSS group 0: empty
+EXCO group 0: empty
+
+Blocks not positioned by the digital component placer:
+    Amux Block @ <No Location>: 
+    amuxcell: Name =\CapSense:CSD\_sensormux_\CapSense:Sns(0)\
+        PORT MAP (
+            vout => \CapSense:CSD\_\CapSense:Sns(0)\ ,
+            muxin_0 => \CapSense:Net_2\ ,
+            muxin_1 => \CapSense:Net_122\ );
+        Properties:
+        {
+        }
+</CYPRESSTAG>
+<CYPRESSTAG name="Port Configuration Details">
+
+------------------------------------------------------------
+Port Configuration report
+------------------------------------------------------------
+     |     |       | Interrupt |                  |                      | 
+Port | Pin | Fixed |      Type |       Drive Mode |                 Name | Connections
+-----+-----+-------+-----------+------------------+----------------------+-----------------------------------------
+   0 |   4 |     * |      NONE |      HI_Z_ANALOG |    \CapSense:Sns(0)\ | Analog(\CapSense:CSD\_\CapSense:Sns(0)\)
+-----+-----+-------+-----------+------------------+----------------------+-----------------------------------------
+   1 |   0 |     * |      NONE |    OPEN_DRAIN_LO |         \I2C:scl(0)\ | FB(Net_20)
+     |   1 |     * |      NONE |    OPEN_DRAIN_LO |         \I2C:sda(0)\ | FB(Net_21)
+     |   6 |     * |      NONE |         CMOS_OUT |             Pin_1(0) | 
+-----+-----+-------+-----------+------------------+----------------------+-----------------------------------------
+   4 |   1 |     * |      NONE |      HI_Z_ANALOG | \CapSense:Shield(0)\ | Analog(\CapSense:Net_122\)
+     |   2 |     * |      NONE |      HI_Z_ANALOG |   \CapSense:Cmod(0)\ | Analog(\CapSense:Net_2\)
+-------------------------------------------------------------------------------------------------------------------
+</CYPRESSTAG>
+</CYPRESSTAG>
+</CYPRESSTAG>
+Digital component placer commit/Report: Elapsed time ==> 0s.017ms
+Digital Placement phase: Elapsed time ==> 0s.325ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Routing">
+"C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\bin/sjrouter.exe" --xml-path "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc4/25/route_arch-rrg.cydata" --vh2-path "PressureSensor_r.vh2" --pcf-path "PressureSensor.pco" --des-name "PressureSensor" --dsf-path "PressureSensor.dsf"
+Routing successful.
+Digital Routing phase: Elapsed time ==> 0s.521ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream Generation">
+Bitstream Generation phase: Elapsed time ==> 0s.221ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream Verification">
+Bitstream Verification phase: Elapsed time ==> 0s.005ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Static timing analysis">
+No timing parameter file available for CY8C4148AZI-S455
+Static timing analysis phase: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Data reporting">
+Data reporting phase: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Database update...">
+Design database save phase: Elapsed time ==> 0s.293ms
+</CYPRESSTAG>
+cydsfit: Elapsed time ==> 2s.400ms
+</CYPRESSTAG>
+Fitter phase: Elapsed time ==> 2s.401ms
+API generation phase: Elapsed time ==> 3s.738ms
+Dependency generation phase: Elapsed time ==> 0s.020ms
+Cleanup phase: Elapsed time ==> 0s.003ms

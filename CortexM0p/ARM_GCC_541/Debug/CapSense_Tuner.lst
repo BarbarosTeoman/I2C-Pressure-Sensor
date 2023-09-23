@@ -1,0 +1,2361 @@
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"CapSense_Tuner.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.CapSense_TuInitialize,"ax",%progbits
+  20              		.align	2
+  21              		.global	CapSense_TuInitialize
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	CapSense_TuInitialize, %function
+  25              	CapSense_TuInitialize:
+  26              	.LFB1:
+  27              		.file 1 "Generated_Source\\PSoC4\\CapSense_Tuner.c"
+   1:Generated_Source\PSoC4/CapSense_Tuner.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC4/CapSense_Tuner.c **** * \file CapSense_Tuner.c
+   3:Generated_Source\PSoC4/CapSense_Tuner.c **** * \version 7.0
+   4:Generated_Source\PSoC4/CapSense_Tuner.c **** *
+   5:Generated_Source\PSoC4/CapSense_Tuner.c **** * \brief
+   6:Generated_Source\PSoC4/CapSense_Tuner.c **** *   This file provides the source code for the Tuner module API of the Component.
+   7:Generated_Source\PSoC4/CapSense_Tuner.c **** *
+   8:Generated_Source\PSoC4/CapSense_Tuner.c **** * \see CapSense v7.0 Datasheet
+   9:Generated_Source\PSoC4/CapSense_Tuner.c **** *
+  10:Generated_Source\PSoC4/CapSense_Tuner.c **** *//*****************************************************************************
+  11:Generated_Source\PSoC4/CapSense_Tuner.c **** * Copyright (2016-2019), Cypress Semiconductor Corporation.
+  12:Generated_Source\PSoC4/CapSense_Tuner.c **** ********************************************************************************
+  13:Generated_Source\PSoC4/CapSense_Tuner.c **** * This software is owned by Cypress Semiconductor Corporation (Cypress) and is
+  14:Generated_Source\PSoC4/CapSense_Tuner.c **** * protected by and subject to worldwide patent protection (United States and
+  15:Generated_Source\PSoC4/CapSense_Tuner.c **** * foreign), United States copyright laws and international treaty provisions.
+  16:Generated_Source\PSoC4/CapSense_Tuner.c **** * Cypress hereby grants to licensee a personal, non-exclusive, non-transferable
+  17:Generated_Source\PSoC4/CapSense_Tuner.c **** * license to copy, use, modify, create derivative works of, and compile the
+  18:Generated_Source\PSoC4/CapSense_Tuner.c **** * Cypress Source Code and derivative works for the sole purpose of creating
+  19:Generated_Source\PSoC4/CapSense_Tuner.c **** * custom software in support of licensee product to be used only in conjunction
+  20:Generated_Source\PSoC4/CapSense_Tuner.c **** * with a Cypress integrated circuit as specified in the applicable agreement.
+  21:Generated_Source\PSoC4/CapSense_Tuner.c **** * Any reproduction, modification, translation, compilation, or representation of
+  22:Generated_Source\PSoC4/CapSense_Tuner.c **** * this software except as specified above is prohibited without the express
+  23:Generated_Source\PSoC4/CapSense_Tuner.c **** * written permission of Cypress.
+  24:Generated_Source\PSoC4/CapSense_Tuner.c **** *
+  25:Generated_Source\PSoC4/CapSense_Tuner.c **** * Disclaimer: CYPRESS MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH
+  26:Generated_Source\PSoC4/CapSense_Tuner.c **** * REGARD TO THIS MATERIAL, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  27:Generated_Source\PSoC4/CapSense_Tuner.c **** * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  28:Generated_Source\PSoC4/CapSense_Tuner.c **** * Cypress reserves the right to make changes without further notice to the
+  29:Generated_Source\PSoC4/CapSense_Tuner.c **** * materials described herein. Cypress does not assume any liability arising out
+  30:Generated_Source\PSoC4/CapSense_Tuner.c **** * of the application or use of any product or circuit described herein. Cypress
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 2
+
+
+  31:Generated_Source\PSoC4/CapSense_Tuner.c **** * does not authorize its products for use as critical components in life-support
+  32:Generated_Source\PSoC4/CapSense_Tuner.c **** * systems where a malfunction or failure may reasonably be expected to result in
+  33:Generated_Source\PSoC4/CapSense_Tuner.c **** * significant injury to the user. The inclusion of Cypress' product in a life-
+  34:Generated_Source\PSoC4/CapSense_Tuner.c **** * support systems application implies that the manufacturer assumes all risk of
+  35:Generated_Source\PSoC4/CapSense_Tuner.c **** * such use and in doing so indemnifies Cypress against all charges. Use may be
+  36:Generated_Source\PSoC4/CapSense_Tuner.c **** * limited by and subject to the applicable Cypress software license agreement.
+  37:Generated_Source\PSoC4/CapSense_Tuner.c **** *******************************************************************************/
+  38:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+  39:Generated_Source\PSoC4/CapSense_Tuner.c **** #include "cytypes.h"
+  40:Generated_Source\PSoC4/CapSense_Tuner.c **** #include "CyLib.h"
+  41:Generated_Source\PSoC4/CapSense_Tuner.c **** #include "CapSense_Structure.h"
+  42:Generated_Source\PSoC4/CapSense_Tuner.c **** #include "CapSense_Tuner.h"
+  43:Generated_Source\PSoC4/CapSense_Tuner.c **** #include "CapSense_Control.h"
+  44:Generated_Source\PSoC4/CapSense_Tuner.c **** #include "CapSense_Configuration.h"
+  45:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+  46:Generated_Source\PSoC4/CapSense_Tuner.c **** /* Tuner states definition */
+  47:Generated_Source\PSoC4/CapSense_Tuner.c **** #define TU_FSM_RUNNING      (0u)
+  48:Generated_Source\PSoC4/CapSense_Tuner.c **** #define TU_FSM_SUSPENDED    (1u)
+  49:Generated_Source\PSoC4/CapSense_Tuner.c **** #define TU_FSM_SNR_TEST     (2u)
+  50:Generated_Source\PSoC4/CapSense_Tuner.c **** #define TU_FSM_ONE_SCAN     (3u)
+  51:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+  52:Generated_Source\PSoC4/CapSense_Tuner.c **** /* Tuner state variable */
+  53:Generated_Source\PSoC4/CapSense_Tuner.c **** static uint32 tunerFsm = TU_FSM_RUNNING;
+  54:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+  55:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+  56:Generated_Source\PSoC4/CapSense_Tuner.c **** /*******************************************************************************
+  57:Generated_Source\PSoC4/CapSense_Tuner.c **** * Function Name: CapSense_TuInitialize
+  58:Generated_Source\PSoC4/CapSense_Tuner.c **** ****************************************************************************//**
+  59:Generated_Source\PSoC4/CapSense_Tuner.c **** *
+  60:Generated_Source\PSoC4/CapSense_Tuner.c **** * \brief
+  61:Generated_Source\PSoC4/CapSense_Tuner.c **** *   This function initializes the communication interface with the Tuner GUI.
+  62:Generated_Source\PSoC4/CapSense_Tuner.c **** *
+  63:Generated_Source\PSoC4/CapSense_Tuner.c **** * \details
+  64:Generated_Source\PSoC4/CapSense_Tuner.c **** *   This API sets the tuner state machine to the default state. It is called by
+  65:Generated_Source\PSoC4/CapSense_Tuner.c **** *   the CapSense_Start() API.
+  66:Generated_Source\PSoC4/CapSense_Tuner.c **** *
+  67:Generated_Source\PSoC4/CapSense_Tuner.c **** *******************************************************************************/
+  68:Generated_Source\PSoC4/CapSense_Tuner.c **** void CapSense_TuInitialize(void)
+  69:Generated_Source\PSoC4/CapSense_Tuner.c **** {
+  28              		.loc 1 69 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  70:Generated_Source\PSoC4/CapSense_Tuner.c ****     volatile CapSense_RAM_STRUCT *ptrDsRam = &CapSense_dsRam;
+  71:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+  72:Generated_Source\PSoC4/CapSense_Tuner.c ****     ptrDsRam->tunerCmd = (uint16)CapSense_TU_CMD_NONE_E;
+  34              		.loc 1 72 0
+  35 0000 0023     		movs	r3, #0
+  36 0002 024A     		ldr	r2, .L2
+  37 0004 D380     		strh	r3, [r2, #6]
+  73:Generated_Source\PSoC4/CapSense_Tuner.c ****     tunerFsm = TU_FSM_RUNNING;
+  38              		.loc 1 73 0
+  39 0006 024A     		ldr	r2, .L2+4
+  40 0008 1360     		str	r3, [r2]
+  74:Generated_Source\PSoC4/CapSense_Tuner.c **** }
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 3
+
+
+  41              		.loc 1 74 0
+  42              		@ sp needed
+  43 000a 7047     		bx	lr
+  44              	.L3:
+  45              		.align	2
+  46              	.L2:
+  47 000c 00000000 		.word	CapSense_dsRam
+  48 0010 00000000 		.word	.LANCHOR0
+  49              		.cfi_endproc
+  50              	.LFE1:
+  51              		.size	CapSense_TuInitialize, .-CapSense_TuInitialize
+  52              		.section	.text.CapSense_RunTuner,"ax",%progbits
+  53              		.align	2
+  54              		.global	CapSense_RunTuner
+  55              		.code	16
+  56              		.thumb_func
+  57              		.type	CapSense_RunTuner, %function
+  58              	CapSense_RunTuner:
+  59              	.LFB2:
+  75:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+  76:Generated_Source\PSoC4/CapSense_Tuner.c **** /*******************************************************************************
+  77:Generated_Source\PSoC4/CapSense_Tuner.c **** * Function Name: CapSense_RunTuner
+  78:Generated_Source\PSoC4/CapSense_Tuner.c **** ****************************************************************************//**
+  79:Generated_Source\PSoC4/CapSense_Tuner.c **** *
+  80:Generated_Source\PSoC4/CapSense_Tuner.c **** * \brief
+  81:Generated_Source\PSoC4/CapSense_Tuner.c **** *  Establishes synchronized communication with the Tuner application.
+  82:Generated_Source\PSoC4/CapSense_Tuner.c **** *
+  83:Generated_Source\PSoC4/CapSense_Tuner.c **** * \details
+  84:Generated_Source\PSoC4/CapSense_Tuner.c **** *  This function is used to establish synchronized communication between the
+  85:Generated_Source\PSoC4/CapSense_Tuner.c **** *  CapSense Component and Tuner application (or other host controllers).
+  86:Generated_Source\PSoC4/CapSense_Tuner.c **** *  This function is called periodically in the application program loop
+  87:Generated_Source\PSoC4/CapSense_Tuner.c **** *  to serve the Tuner application (or host controller) requests and commands.
+  88:Generated_Source\PSoC4/CapSense_Tuner.c **** *  In most cases, the best place to call this function is after processing and
+  89:Generated_Source\PSoC4/CapSense_Tuner.c **** *  before next scanning.
+  90:Generated_Source\PSoC4/CapSense_Tuner.c **** *
+  91:Generated_Source\PSoC4/CapSense_Tuner.c **** *  If this function is absent in the application program, then communication is
+  92:Generated_Source\PSoC4/CapSense_Tuner.c **** *  asynchronous and the following disadvantages are applicable:
+  93:Generated_Source\PSoC4/CapSense_Tuner.c **** *    - The raw counts displayed in the tuner may be filtered and/or unfiltered.
+  94:Generated_Source\PSoC4/CapSense_Tuner.c **** *      As a result, noise and SNR measurements will not be accurate.
+  95:Generated_Source\PSoC4/CapSense_Tuner.c **** *    - The Tuner tool may read the sensor data such as raw counts from a scan
+  96:Generated_Source\PSoC4/CapSense_Tuner.c **** *      multiple times, as a result, noise and SNR measurement will not be
+  97:Generated_Source\PSoC4/CapSense_Tuner.c **** *      accurate.
+  98:Generated_Source\PSoC4/CapSense_Tuner.c **** *    - The Tuner tool and host controller should not change the Component parameters
+  99:Generated_Source\PSoC4/CapSense_Tuner.c **** *      via the tuner interface. Changing the Component parameters via the tuner
+ 100:Generated_Source\PSoC4/CapSense_Tuner.c **** *      interface in the async mode will result in Component abnormal behavior.
+ 101:Generated_Source\PSoC4/CapSense_Tuner.c **** *
+ 102:Generated_Source\PSoC4/CapSense_Tuner.c **** *  Note that calling this function is not mandatory for the application, but
+ 103:Generated_Source\PSoC4/CapSense_Tuner.c **** *  required only to synchronize the communication with the host controller or
+ 104:Generated_Source\PSoC4/CapSense_Tuner.c **** *  tuner application.
+ 105:Generated_Source\PSoC4/CapSense_Tuner.c **** *
+ 106:Generated_Source\PSoC4/CapSense_Tuner.c **** * \return
+ 107:Generated_Source\PSoC4/CapSense_Tuner.c **** *  In some cases, the application program may need to know if the Component was
+ 108:Generated_Source\PSoC4/CapSense_Tuner.c **** *  re-initialized. The return indicates if a restart command was executed or not:
+ 109:Generated_Source\PSoC4/CapSense_Tuner.c **** *    - CapSense_STATUS_RESTART_DONE - Based on a received command, the
+ 110:Generated_Source\PSoC4/CapSense_Tuner.c **** *      Component was restarted.
+ 111:Generated_Source\PSoC4/CapSense_Tuner.c **** *    -  CapSense_STATUS_RESTART_NONE - No restart was executed by this
+ 112:Generated_Source\PSoC4/CapSense_Tuner.c **** *      function.
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 4
+
+
+ 113:Generated_Source\PSoC4/CapSense_Tuner.c **** *
+ 114:Generated_Source\PSoC4/CapSense_Tuner.c **** *******************************************************************************/
+ 115:Generated_Source\PSoC4/CapSense_Tuner.c **** uint32 CapSense_RunTuner(void)
+ 116:Generated_Source\PSoC4/CapSense_Tuner.c **** {
+  60              		.loc 1 116 0
+  61              		.cfi_startproc
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64 0000 70B5     		push	{r4, r5, r6, lr}
+  65              		.cfi_def_cfa_offset 16
+  66              		.cfi_offset 4, -16
+  67              		.cfi_offset 5, -12
+  68              		.cfi_offset 6, -8
+  69              		.cfi_offset 14, -4
+  70              	.LVL1:
+ 117:Generated_Source\PSoC4/CapSense_Tuner.c ****     uint8 interruptState;
+ 118:Generated_Source\PSoC4/CapSense_Tuner.c ****     uint32 widgetId;
+ 119:Generated_Source\PSoC4/CapSense_Tuner.c ****     uint32 sensorId;
+ 120:Generated_Source\PSoC4/CapSense_Tuner.c ****     uint32 updateFlag = 0Lu;
+ 121:Generated_Source\PSoC4/CapSense_Tuner.c ****     CapSense_TU_CMD_ENUM command;
+ 122:Generated_Source\PSoC4/CapSense_Tuner.c ****     uint32 tunerStatus = CapSense_STATUS_RESTART_NONE;
+  71              		.loc 1 122 0
+  72 0002 0025     		movs	r5, #0
+ 120:Generated_Source\PSoC4/CapSense_Tuner.c ****     CapSense_TU_CMD_ENUM command;
+  73              		.loc 1 120 0
+  74 0004 0026     		movs	r6, #0
+  75              	.LVL2:
+  76              	.L16:
+ 123:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 124:Generated_Source\PSoC4/CapSense_Tuner.c ****     volatile CapSense_RAM_STRUCT *ptrDsRam;
+ 125:Generated_Source\PSoC4/CapSense_Tuner.c ****     volatile CapSense_RAM_SNS_STRUCT *ptrSnsTmp;
+ 126:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 127:Generated_Source\PSoC4/CapSense_Tuner.c ****     ptrDsRam = &CapSense_dsRam;
+ 128:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 129:Generated_Source\PSoC4/CapSense_Tuner.c ****     do
+ 130:Generated_Source\PSoC4/CapSense_Tuner.c ****     {
+ 131:Generated_Source\PSoC4/CapSense_Tuner.c ****         /* ONE_SCAN command could be interpreted as two commands:
+ 132:Generated_Source\PSoC4/CapSense_Tuner.c ****         * RESUME till next call of this function and then
+ 133:Generated_Source\PSoC4/CapSense_Tuner.c ****         * SUSPEND till next command receiving.
+ 134:Generated_Source\PSoC4/CapSense_Tuner.c ****         */
+ 135:Generated_Source\PSoC4/CapSense_Tuner.c ****         if (TU_FSM_ONE_SCAN == tunerFsm)
+  77              		.loc 1 135 0
+  78 0006 3D4B     		ldr	r3, .L18
+  79 0008 1B68     		ldr	r3, [r3]
+  80 000a 032B     		cmp	r3, #3
+  81 000c 06D1     		bne	.L5
+ 136:Generated_Source\PSoC4/CapSense_Tuner.c ****         {
+ 137:Generated_Source\PSoC4/CapSense_Tuner.c ****             interruptState = CyEnterCriticalSection();
+  82              		.loc 1 137 0
+  83 000e FFF7FEFF 		bl	CyEnterCriticalSection
+  84              	.LVL3:
+ 138:Generated_Source\PSoC4/CapSense_Tuner.c ****             ptrDsRam->tunerCmd = (uint16)CapSense_TU_CMD_SUSPEND_E;
+  85              		.loc 1 138 0
+  86 0012 0122     		movs	r2, #1
+  87 0014 3A4B     		ldr	r3, .L18+4
+  88 0016 DA80     		strh	r2, [r3, #6]
+ 139:Generated_Source\PSoC4/CapSense_Tuner.c ****             CyExitCriticalSection(interruptState);
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 5
+
+
+  89              		.loc 1 139 0
+  90 0018 FFF7FEFF 		bl	CyExitCriticalSection
+  91              	.LVL4:
+  92              	.L5:
+ 140:Generated_Source\PSoC4/CapSense_Tuner.c ****         }
+ 141:Generated_Source\PSoC4/CapSense_Tuner.c ****         command = (CapSense_TU_CMD_ENUM)ptrDsRam->tunerCmd;
+  93              		.loc 1 141 0
+  94 001c 384B     		ldr	r3, .L18+4
+  95 001e DC88     		ldrh	r4, [r3, #6]
+  96 0020 E4B2     		uxtb	r4, r4
+  97              	.LVL5:
+ 142:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 143:Generated_Source\PSoC4/CapSense_Tuner.c ****         /* Check command register */
+ 144:Generated_Source\PSoC4/CapSense_Tuner.c ****         switch (command)
+  98              		.loc 1 144 0
+  99 0022 062C     		cmp	r4, #6
+ 100 0024 23D8     		bhi	.L6
+ 101 0026 A300     		lsls	r3, r4, #2
+ 102 0028 364A     		ldr	r2, .L18+8
+ 103 002a D358     		ldr	r3, [r2, r3]
+ 104 002c 9F46     		mov	pc, r3
+ 105              		.section	.rodata
+ 106              		.align	2
+ 107              	.L8:
+ 108 0000 6E000000 		.word	.L6
+ 109 0004 2E000000 		.word	.L7
+ 110 0008 38000000 		.word	.L9
+ 111 000c 42000000 		.word	.L10
+ 112 0010 52000000 		.word	.L11
+ 113 0014 5C000000 		.word	.L12
+ 114 0018 66000000 		.word	.L13
+ 115              		.section	.text.CapSense_RunTuner
+ 116              	.L7:
+ 145:Generated_Source\PSoC4/CapSense_Tuner.c ****         {
+ 146:Generated_Source\PSoC4/CapSense_Tuner.c ****         case CapSense_TU_CMD_SUSPEND_E:
+ 147:Generated_Source\PSoC4/CapSense_Tuner.c ****             tunerFsm = TU_FSM_SUSPENDED;
+ 117              		.loc 1 147 0
+ 118 002e 0122     		movs	r2, #1
+ 119 0030 324B     		ldr	r3, .L18
+ 120 0032 1A60     		str	r2, [r3]
+ 121              	.LVL6:
+ 148:Generated_Source\PSoC4/CapSense_Tuner.c ****             updateFlag = 1Lu;
+ 122              		.loc 1 148 0
+ 123 0034 0126     		movs	r6, #1
+ 149:Generated_Source\PSoC4/CapSense_Tuner.c ****             break;
+ 124              		.loc 1 149 0
+ 125 0036 1AE0     		b	.L6
+ 126              	.LVL7:
+ 127              	.L9:
+ 150:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 151:Generated_Source\PSoC4/CapSense_Tuner.c ****         case CapSense_TU_CMD_RESUME_E:
+ 152:Generated_Source\PSoC4/CapSense_Tuner.c ****             tunerFsm = TU_FSM_RUNNING;
+ 128              		.loc 1 152 0
+ 129 0038 0022     		movs	r2, #0
+ 130 003a 304B     		ldr	r3, .L18
+ 131 003c 1A60     		str	r2, [r3]
+ 132              	.LVL8:
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 6
+
+
+ 153:Generated_Source\PSoC4/CapSense_Tuner.c ****             updateFlag = 1Lu;
+ 133              		.loc 1 153 0
+ 134 003e 0126     		movs	r6, #1
+ 154:Generated_Source\PSoC4/CapSense_Tuner.c ****             break;
+ 135              		.loc 1 154 0
+ 136 0040 15E0     		b	.L6
+ 137              	.LVL9:
+ 138              	.L10:
+ 155:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 156:Generated_Source\PSoC4/CapSense_Tuner.c ****         case CapSense_TU_CMD_RESTART_E:
+ 157:Generated_Source\PSoC4/CapSense_Tuner.c ****             (void)CapSense_Start();
+ 139              		.loc 1 157 0
+ 140 0042 FFF7FEFF 		bl	CapSense_Start
+ 141              	.LVL10:
+ 158:Generated_Source\PSoC4/CapSense_Tuner.c ****             tunerStatus = CapSense_STATUS_RESTART_DONE;
+ 159:Generated_Source\PSoC4/CapSense_Tuner.c ****             tunerFsm = TU_FSM_RUNNING;
+ 142              		.loc 1 159 0
+ 143 0046 0022     		movs	r2, #0
+ 144 0048 2C4B     		ldr	r3, .L18
+ 145 004a 1A60     		str	r2, [r3]
+ 146              	.LVL11:
+ 158:Generated_Source\PSoC4/CapSense_Tuner.c ****             tunerStatus = CapSense_STATUS_RESTART_DONE;
+ 147              		.loc 1 158 0
+ 148 004c 0125     		movs	r5, #1
+ 160:Generated_Source\PSoC4/CapSense_Tuner.c ****             updateFlag = 1Lu;
+ 149              		.loc 1 160 0
+ 150 004e 0126     		movs	r6, #1
+ 161:Generated_Source\PSoC4/CapSense_Tuner.c ****             break;
+ 151              		.loc 1 161 0
+ 152 0050 0DE0     		b	.L6
+ 153              	.LVL12:
+ 154              	.L11:
+ 162:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 163:Generated_Source\PSoC4/CapSense_Tuner.c ****         case CapSense_TU_CMD_RUN_SNR_TEST_E:
+ 164:Generated_Source\PSoC4/CapSense_Tuner.c ****             tunerFsm = TU_FSM_SNR_TEST;
+ 155              		.loc 1 164 0
+ 156 0052 0222     		movs	r2, #2
+ 157 0054 294B     		ldr	r3, .L18
+ 158 0056 1A60     		str	r2, [r3]
+ 159              	.LVL13:
+ 165:Generated_Source\PSoC4/CapSense_Tuner.c ****             updateFlag = 1Lu;
+ 160              		.loc 1 165 0
+ 161 0058 0126     		movs	r6, #1
+ 166:Generated_Source\PSoC4/CapSense_Tuner.c ****             break;
+ 162              		.loc 1 166 0
+ 163 005a 08E0     		b	.L6
+ 164              	.LVL14:
+ 165              	.L12:
+ 167:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 168:Generated_Source\PSoC4/CapSense_Tuner.c ****         case CapSense_TU_CMD_PING_E:
+ 169:Generated_Source\PSoC4/CapSense_Tuner.c ****             tunerFsm = TU_FSM_RUNNING;
+ 166              		.loc 1 169 0
+ 167 005c 0022     		movs	r2, #0
+ 168 005e 274B     		ldr	r3, .L18
+ 169 0060 1A60     		str	r2, [r3]
+ 170              	.LVL15:
+ 170:Generated_Source\PSoC4/CapSense_Tuner.c ****             updateFlag = 1Lu;
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 7
+
+
+ 171              		.loc 1 170 0
+ 172 0062 0126     		movs	r6, #1
+ 171:Generated_Source\PSoC4/CapSense_Tuner.c ****             break;
+ 173              		.loc 1 171 0
+ 174 0064 03E0     		b	.L6
+ 175              	.LVL16:
+ 176              	.L13:
+ 172:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 173:Generated_Source\PSoC4/CapSense_Tuner.c ****         case CapSense_TU_CMD_ONE_SCAN_E:
+ 174:Generated_Source\PSoC4/CapSense_Tuner.c ****             tunerFsm = TU_FSM_ONE_SCAN;
+ 177              		.loc 1 174 0
+ 178 0066 0322     		movs	r2, #3
+ 179 0068 244B     		ldr	r3, .L18
+ 180 006a 1A60     		str	r2, [r3]
+ 181              	.LVL17:
+ 175:Generated_Source\PSoC4/CapSense_Tuner.c ****             updateFlag = 0Lu;
+ 182              		.loc 1 175 0
+ 183 006c 0026     		movs	r6, #0
+ 184              	.LVL18:
+ 185              	.L6:
+ 176:Generated_Source\PSoC4/CapSense_Tuner.c ****             break;
+ 177:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 178:Generated_Source\PSoC4/CapSense_Tuner.c ****         default:
+ 179:Generated_Source\PSoC4/CapSense_Tuner.c ****             break;
+ 180:Generated_Source\PSoC4/CapSense_Tuner.c ****         }
+ 181:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 182:Generated_Source\PSoC4/CapSense_Tuner.c ****         /* Set Complete flag in command register if needed */
+ 183:Generated_Source\PSoC4/CapSense_Tuner.c ****         if (0Lu != updateFlag)
+ 186              		.loc 1 183 0
+ 187 006e 002E     		cmp	r6, #0
+ 188 0070 0FD0     		beq	.L14
+ 184:Generated_Source\PSoC4/CapSense_Tuner.c ****         {
+ 185:Generated_Source\PSoC4/CapSense_Tuner.c ****             interruptState = CyEnterCriticalSection();
+ 189              		.loc 1 185 0
+ 190 0072 FFF7FEFF 		bl	CyEnterCriticalSection
+ 191              	.LVL19:
+ 186:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 187:Generated_Source\PSoC4/CapSense_Tuner.c ****             /* Check if command wasn't overwritten with new command */
+ 188:Generated_Source\PSoC4/CapSense_Tuner.c ****             if (command == (CapSense_TU_CMD_ENUM)ptrDsRam->tunerCmd)
+ 192              		.loc 1 188 0
+ 193 0076 224B     		ldr	r3, .L18+4
+ 194 0078 DB88     		ldrh	r3, [r3, #6]
+ 195 007a DBB2     		uxtb	r3, r3
+ 196 007c 9C42     		cmp	r4, r3
+ 197 007e 05D1     		bne	.L15
+ 189:Generated_Source\PSoC4/CapSense_Tuner.c ****             {
+ 190:Generated_Source\PSoC4/CapSense_Tuner.c ****                 ptrDsRam->tunerCmd |= CapSense_TU_CMD_COMPLETE_BIT;
+ 198              		.loc 1 190 0
+ 199 0080 1F4A     		ldr	r2, .L18+4
+ 200 0082 D188     		ldrh	r1, [r2, #6]
+ 201 0084 204B     		ldr	r3, .L18+12
+ 202 0086 0B43     		orrs	r3, r1
+ 203 0088 9BB2     		uxth	r3, r3
+ 204 008a D380     		strh	r3, [r2, #6]
+ 205              	.L15:
+ 191:Generated_Source\PSoC4/CapSense_Tuner.c ****             }
+ 192:Generated_Source\PSoC4/CapSense_Tuner.c ****             CyExitCriticalSection(interruptState);
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 8
+
+
+ 206              		.loc 1 192 0
+ 207 008c FFF7FEFF 		bl	CyExitCriticalSection
+ 208              	.LVL20:
+ 193:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 194:Generated_Source\PSoC4/CapSense_Tuner.c ****             updateFlag = 0Lu;
+ 209              		.loc 1 194 0
+ 210 0090 0026     		movs	r6, #0
+ 211              	.LVL21:
+ 212              	.L14:
+ 195:Generated_Source\PSoC4/CapSense_Tuner.c ****         }
+ 196:Generated_Source\PSoC4/CapSense_Tuner.c ****     } while (TU_FSM_SUSPENDED == tunerFsm);
+ 213              		.loc 1 196 0
+ 214 0092 1A4B     		ldr	r3, .L18
+ 215 0094 1B68     		ldr	r3, [r3]
+ 216 0096 012B     		cmp	r3, #1
+ 217 0098 B5D0     		beq	.L16
+ 197:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 198:Generated_Source\PSoC4/CapSense_Tuner.c ****     /* Check for SNR Test mode and do appropriate actions */
+ 199:Generated_Source\PSoC4/CapSense_Tuner.c ****     if (TU_FSM_SNR_TEST == tunerFsm)
+ 218              		.loc 1 199 0
+ 219 009a 022B     		cmp	r3, #2
+ 220 009c 2CD1     		bne	.L17
+ 200:Generated_Source\PSoC4/CapSense_Tuner.c ****     {
+ 201:Generated_Source\PSoC4/CapSense_Tuner.c ****         widgetId = ptrDsRam->snrTestWidgetId;
+ 221              		.loc 1 201 0
+ 222 009e 184A     		ldr	r2, .L18+4
+ 223 00a0 3633     		adds	r3, r3, #54
+ 224 00a2 D35C     		ldrb	r3, [r2, r3]
+ 225 00a4 DBB2     		uxtb	r3, r3
+ 226              	.LVL22:
+ 202:Generated_Source\PSoC4/CapSense_Tuner.c ****         sensorId = ptrDsRam->snrTestSensorId;
+ 227              		.loc 1 202 0
+ 228 00a6 3921     		movs	r1, #57
+ 229 00a8 525C     		ldrb	r2, [r2, r1]
+ 230 00aa D2B2     		uxtb	r2, r2
+ 231              	.LVL23:
+ 203:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 204:Generated_Source\PSoC4/CapSense_Tuner.c ****         /* Check if widgetId and sensorId are in range,
+ 205:Generated_Source\PSoC4/CapSense_Tuner.c ****          * and data was updated in RAM (scan counter changed)
+ 206:Generated_Source\PSoC4/CapSense_Tuner.c ****          */
+ 207:Generated_Source\PSoC4/CapSense_Tuner.c ****         if ((widgetId < CapSense_TOTAL_WIDGETS)              &&
+ 232              		.loc 1 207 0
+ 233 00ac 002B     		cmp	r3, #0
+ 234 00ae 23D1     		bne	.L17
+ 208:Generated_Source\PSoC4/CapSense_Tuner.c ****             (sensorId < CapSense_GET_SENSOR_COUNT(widgetId)) &&
+ 235              		.loc 1 208 0 discriminator 1
+ 236 00b0 D800     		lsls	r0, r3, #3
+ 237 00b2 C01A     		subs	r0, r0, r3
+ 238 00b4 8100     		lsls	r1, r0, #2
+ 239 00b6 1548     		ldr	r0, .L18+16
+ 240 00b8 4118     		adds	r1, r0, r1
+ 241 00ba 098B     		ldrh	r1, [r1, #24]
+ 207:Generated_Source\PSoC4/CapSense_Tuner.c ****             (sensorId < CapSense_GET_SENSOR_COUNT(widgetId)) &&
+ 242              		.loc 1 207 0 discriminator 1
+ 243 00bc 8A42     		cmp	r2, r1
+ 244 00be 1BD2     		bcs	.L17
+ 209:Generated_Source\PSoC4/CapSense_Tuner.c ****             (ptrDsRam->scanCounter != ptrDsRam->snrTestScanCounter))
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 9
+
+
+ 245              		.loc 1 209 0
+ 246 00c0 0F49     		ldr	r1, .L18+4
+ 247 00c2 0889     		ldrh	r0, [r1, #8]
+ 248 00c4 80B2     		uxth	r0, r0
+ 249 00c6 498F     		ldrh	r1, [r1, #58]
+ 250 00c8 89B2     		uxth	r1, r1
+ 208:Generated_Source\PSoC4/CapSense_Tuner.c ****             (sensorId < CapSense_GET_SENSOR_COUNT(widgetId)) &&
+ 251              		.loc 1 208 0
+ 252 00ca 8842     		cmp	r0, r1
+ 253 00cc 14D0     		beq	.L17
+ 210:Generated_Source\PSoC4/CapSense_Tuner.c ****         {
+ 211:Generated_Source\PSoC4/CapSense_Tuner.c ****             /* Get access to the Sensor Object */
+ 212:Generated_Source\PSoC4/CapSense_Tuner.c ****             ptrSnsTmp = CapSense_dsFlash.wdgtArray[widgetId].ptr2SnsRam;
+ 254              		.loc 1 212 0
+ 255 00ce D900     		lsls	r1, r3, #3
+ 256 00d0 CB1A     		subs	r3, r1, r3
+ 257              	.LVL24:
+ 258 00d2 9900     		lsls	r1, r3, #2
+ 259 00d4 0D4B     		ldr	r3, .L18+16
+ 260 00d6 5918     		adds	r1, r3, r1
+ 261 00d8 8C68     		ldr	r4, [r1, #8]
+ 262              	.LVL25:
+ 213:Generated_Source\PSoC4/CapSense_Tuner.c ****             ptrSnsTmp += sensorId;
+ 263              		.loc 1 213 0
+ 264 00da 9300     		lsls	r3, r2, #2
+ 265 00dc 9A18     		adds	r2, r3, r2
+ 266              	.LVL26:
+ 267 00de 5300     		lsls	r3, r2, #1
+ 268 00e0 E418     		adds	r4, r4, r3
+ 269              	.LVL27:
+ 214:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 215:Generated_Source\PSoC4/CapSense_Tuner.c ****             /* Update data in SNR Test Object */
+ 216:Generated_Source\PSoC4/CapSense_Tuner.c ****             interruptState = CyEnterCriticalSection();
+ 270              		.loc 1 216 0
+ 271 00e2 FFF7FEFF 		bl	CyEnterCriticalSection
+ 272              	.LVL28:
+ 217:Generated_Source\PSoC4/CapSense_Tuner.c ****             ptrDsRam->snrTestScanCounter = ptrDsRam->scanCounter;
+ 273              		.loc 1 217 0
+ 274 00e6 064B     		ldr	r3, .L18+4
+ 275 00e8 1A89     		ldrh	r2, [r3, #8]
+ 276 00ea 92B2     		uxth	r2, r2
+ 277 00ec 5A87     		strh	r2, [r3, #58]
+ 218:Generated_Source\PSoC4/CapSense_Tuner.c ****             ptrDsRam->snrTestRawCount[0u] = ptrSnsTmp->raw[0u];
+ 278              		.loc 1 218 0
+ 279 00ee 2288     		ldrh	r2, [r4]
+ 280 00f0 92B2     		uxth	r2, r2
+ 281 00f2 9A87     		strh	r2, [r3, #60]
+ 219:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 220:Generated_Source\PSoC4/CapSense_Tuner.c ****             #if (0u != CapSense_MULTI_FREQ_SCAN_EN)
+ 221:Generated_Source\PSoC4/CapSense_Tuner.c ****                 ptrDsRam->snrTestRawCount[1u] = ptrSnsTmp->raw[1u];
+ 222:Generated_Source\PSoC4/CapSense_Tuner.c ****                 ptrDsRam->snrTestRawCount[2u] = ptrSnsTmp->raw[2u];
+ 223:Generated_Source\PSoC4/CapSense_Tuner.c ****             #endif
+ 224:Generated_Source\PSoC4/CapSense_Tuner.c **** 
+ 225:Generated_Source\PSoC4/CapSense_Tuner.c ****             CyExitCriticalSection(interruptState);
+ 282              		.loc 1 225 0
+ 283 00f4 FFF7FEFF 		bl	CyExitCriticalSection
+ 284              	.LVL29:
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 10
+
+
+ 285              	.L17:
+ 226:Generated_Source\PSoC4/CapSense_Tuner.c ****         }
+ 227:Generated_Source\PSoC4/CapSense_Tuner.c ****     }
+ 228:Generated_Source\PSoC4/CapSense_Tuner.c ****     return tunerStatus;
+ 229:Generated_Source\PSoC4/CapSense_Tuner.c **** }
+ 286              		.loc 1 229 0
+ 287 00f8 2800     		movs	r0, r5
+ 288              		@ sp needed
+ 289              	.LVL30:
+ 290              	.LVL31:
+ 291 00fa 70BD     		pop	{r4, r5, r6, pc}
+ 292              	.L19:
+ 293              		.align	2
+ 294              	.L18:
+ 295 00fc 00000000 		.word	.LANCHOR0
+ 296 0100 00000000 		.word	CapSense_dsRam
+ 297 0104 00000000 		.word	.L8
+ 298 0108 0080FFFF 		.word	-32768
+ 299 010c 00000000 		.word	CapSense_dsFlash
+ 300              		.cfi_endproc
+ 301              	.LFE2:
+ 302              		.size	CapSense_RunTuner, .-CapSense_RunTuner
+ 303              		.bss
+ 304              		.align	2
+ 305              		.set	.LANCHOR0,. + 0
+ 306              		.type	tunerFsm, %object
+ 307              		.size	tunerFsm, 4
+ 308              	tunerFsm:
+ 309 0000 00000000 		.space	4
+ 310              		.text
+ 311              	.Letext0:
+ 312              		.file 2 "Generated_Source\\PSoC4\\cytypes.h"
+ 313              		.file 3 "Generated_Source\\PSoC4\\CapSense_Configuration.h"
+ 314              		.file 4 "Generated_Source\\PSoC4\\CapSense_Structure.h"
+ 315              		.file 5 "Generated_Source\\PSoC4\\CapSense_Tuner.h"
+ 316              		.file 6 "Generated_Source\\PSoC4\\CyLib.h"
+ 317              		.file 7 "Generated_Source\\PSoC4\\CapSense_Control.h"
+ 318              		.section	.debug_info,"",%progbits
+ 319              	.Ldebug_info0:
+ 320 0000 DD050000 		.4byte	0x5dd
+ 321 0004 0400     		.2byte	0x4
+ 322 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 323 000a 04       		.byte	0x4
+ 324 000b 01       		.uleb128 0x1
+ 325 000c 41040000 		.4byte	.LASF94
+ 326 0010 0C       		.byte	0xc
+ 327 0011 6E020000 		.4byte	.LASF95
+ 328 0015 F2050000 		.4byte	.LASF96
+ 329 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 330 001d 00000000 		.4byte	0
+ 331 0021 00000000 		.4byte	.Ldebug_line0
+ 332 0025 02       		.uleb128 0x2
+ 333 0026 01       		.byte	0x1
+ 334 0027 06       		.byte	0x6
+ 335 0028 F4000000 		.4byte	.LASF0
+ 336 002c 02       		.uleb128 0x2
+ 337 002d 01       		.byte	0x1
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 11
+
+
+ 338 002e 08       		.byte	0x8
+ 339 002f 9A030000 		.4byte	.LASF1
+ 340 0033 02       		.uleb128 0x2
+ 341 0034 02       		.byte	0x2
+ 342 0035 05       		.byte	0x5
+ 343 0036 BF030000 		.4byte	.LASF2
+ 344 003a 02       		.uleb128 0x2
+ 345 003b 02       		.byte	0x2
+ 346 003c 07       		.byte	0x7
+ 347 003d 4A020000 		.4byte	.LASF3
+ 348 0041 02       		.uleb128 0x2
+ 349 0042 04       		.byte	0x4
+ 350 0043 05       		.byte	0x5
+ 351 0044 3B010000 		.4byte	.LASF4
+ 352 0048 02       		.uleb128 0x2
+ 353 0049 04       		.byte	0x4
+ 354 004a 07       		.byte	0x7
+ 355 004b 01020000 		.4byte	.LASF5
+ 356 004f 02       		.uleb128 0x2
+ 357 0050 08       		.byte	0x8
+ 358 0051 05       		.byte	0x5
+ 359 0052 E6000000 		.4byte	.LASF6
+ 360 0056 02       		.uleb128 0x2
+ 361 0057 08       		.byte	0x8
+ 362 0058 07       		.byte	0x7
+ 363 0059 4E000000 		.4byte	.LASF7
+ 364 005d 03       		.uleb128 0x3
+ 365 005e 04       		.byte	0x4
+ 366 005f 05       		.byte	0x5
+ 367 0060 696E7400 		.ascii	"int\000"
+ 368 0064 02       		.uleb128 0x2
+ 369 0065 04       		.byte	0x4
+ 370 0066 07       		.byte	0x7
+ 371 0067 D1010000 		.4byte	.LASF8
+ 372 006b 04       		.uleb128 0x4
+ 373 006c 59010000 		.4byte	.LASF9
+ 374 0070 02       		.byte	0x2
+ 375 0071 FB01     		.2byte	0x1fb
+ 376 0073 2C000000 		.4byte	0x2c
+ 377 0077 04       		.uleb128 0x4
+ 378 0078 00000000 		.4byte	.LASF10
+ 379 007c 02       		.byte	0x2
+ 380 007d FC01     		.2byte	0x1fc
+ 381 007f 3A000000 		.4byte	0x3a
+ 382 0083 04       		.uleb128 0x4
+ 383 0084 8D010000 		.4byte	.LASF11
+ 384 0088 02       		.byte	0x2
+ 385 0089 FD01     		.2byte	0x1fd
+ 386 008b 48000000 		.4byte	0x48
+ 387 008f 02       		.uleb128 0x2
+ 388 0090 04       		.byte	0x4
+ 389 0091 04       		.byte	0x4
+ 390 0092 63030000 		.4byte	.LASF12
+ 391 0096 02       		.uleb128 0x2
+ 392 0097 08       		.byte	0x8
+ 393 0098 04       		.byte	0x4
+ 394 0099 5F010000 		.4byte	.LASF13
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 12
+
+
+ 395 009d 02       		.uleb128 0x2
+ 396 009e 01       		.byte	0x1
+ 397 009f 08       		.byte	0x8
+ 398 00a0 D3040000 		.4byte	.LASF14
+ 399 00a4 05       		.uleb128 0x5
+ 400 00a5 83000000 		.4byte	0x83
+ 401 00a9 02       		.uleb128 0x2
+ 402 00aa 08       		.byte	0x8
+ 403 00ab 04       		.byte	0x4
+ 404 00ac EB020000 		.4byte	.LASF15
+ 405 00b0 02       		.uleb128 0x2
+ 406 00b1 04       		.byte	0x4
+ 407 00b2 07       		.byte	0x7
+ 408 00b3 E2020000 		.4byte	.LASF16
+ 409 00b7 06       		.uleb128 0x6
+ 410 00b8 04       		.byte	0x4
+ 411 00b9 04       		.uleb128 0x4
+ 412 00ba CE000000 		.4byte	.LASF17
+ 413 00be 03       		.byte	0x3
+ 414 00bf 1E01     		.2byte	0x11e
+ 415 00c1 77000000 		.4byte	0x77
+ 416 00c5 04       		.uleb128 0x4
+ 417 00c6 89000000 		.4byte	.LASF18
+ 418 00ca 03       		.byte	0x3
+ 419 00cb 2201     		.2byte	0x122
+ 420 00cd 6B000000 		.4byte	0x6b
+ 421 00d1 07       		.uleb128 0x7
+ 422 00d2 6B000000 		.4byte	0x6b
+ 423 00d6 E1000000 		.4byte	0xe1
+ 424 00da 08       		.uleb128 0x8
+ 425 00db B0000000 		.4byte	0xb0
+ 426 00df 00       		.byte	0
+ 427 00e0 00       		.byte	0
+ 428 00e1 09       		.uleb128 0x9
+ 429 00e2 10       		.byte	0x10
+ 430 00e3 04       		.byte	0x4
+ 431 00e4 F3       		.byte	0xf3
+ 432 00e5 77010000 		.4byte	0x177
+ 433 00e9 0A       		.uleb128 0xa
+ 434 00ea 0E040000 		.4byte	.LASF19
+ 435 00ee 04       		.byte	0x4
+ 436 00ef F8       		.byte	0xf8
+ 437 00f0 77000000 		.4byte	0x77
+ 438 00f4 00       		.byte	0
+ 439 00f5 0A       		.uleb128 0xa
+ 440 00f6 BA050000 		.4byte	.LASF20
+ 441 00fa 04       		.byte	0x4
+ 442 00fb FD       		.byte	0xfd
+ 443 00fc B9000000 		.4byte	0xb9
+ 444 0100 02       		.byte	0x2
+ 445 0101 0B       		.uleb128 0xb
+ 446 0102 2E060000 		.4byte	.LASF21
+ 447 0106 04       		.byte	0x4
+ 448 0107 0201     		.2byte	0x102
+ 449 0109 6B000000 		.4byte	0x6b
+ 450 010d 04       		.byte	0x4
+ 451 010e 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 13
+
+
+ 452 010f 04030000 		.4byte	.LASF22
+ 453 0113 04       		.byte	0x4
+ 454 0114 0701     		.2byte	0x107
+ 455 0116 6B000000 		.4byte	0x6b
+ 456 011a 05       		.byte	0x5
+ 457 011b 0B       		.uleb128 0xb
+ 458 011c 94010000 		.4byte	.LASF23
+ 459 0120 04       		.byte	0x4
+ 460 0121 0D01     		.2byte	0x10d
+ 461 0123 6B000000 		.4byte	0x6b
+ 462 0127 06       		.byte	0x6
+ 463 0128 0B       		.uleb128 0xb
+ 464 0129 DF040000 		.4byte	.LASF24
+ 465 012d 04       		.byte	0x4
+ 466 012e 1301     		.2byte	0x113
+ 467 0130 6B000000 		.4byte	0x6b
+ 468 0134 07       		.byte	0x7
+ 469 0135 0B       		.uleb128 0xb
+ 470 0136 35020000 		.4byte	.LASF25
+ 471 013a 04       		.byte	0x4
+ 472 013b 1A01     		.2byte	0x11a
+ 473 013d C5000000 		.4byte	0xc5
+ 474 0141 08       		.byte	0x8
+ 475 0142 0B       		.uleb128 0xb
+ 476 0143 D2020000 		.4byte	.LASF26
+ 477 0147 04       		.byte	0x4
+ 478 0148 2101     		.2byte	0x121
+ 479 014a D1000000 		.4byte	0xd1
+ 480 014e 09       		.byte	0x9
+ 481 014f 0B       		.uleb128 0xb
+ 482 0150 F4030000 		.4byte	.LASF27
+ 483 0154 04       		.byte	0x4
+ 484 0155 2601     		.2byte	0x126
+ 485 0157 6B000000 		.4byte	0x6b
+ 486 015b 0A       		.byte	0xa
+ 487 015c 0B       		.uleb128 0xb
+ 488 015d D8040000 		.4byte	.LASF28
+ 489 0161 04       		.byte	0x4
+ 490 0162 2E01     		.2byte	0x12e
+ 491 0164 77000000 		.4byte	0x77
+ 492 0168 0C       		.byte	0xc
+ 493 0169 0B       		.uleb128 0xb
+ 494 016a 8F050000 		.4byte	.LASF29
+ 495 016e 04       		.byte	0x4
+ 496 016f 3301     		.2byte	0x133
+ 497 0171 6B000000 		.4byte	0x6b
+ 498 0175 0E       		.byte	0xe
+ 499 0176 00       		.byte	0
+ 500 0177 04       		.uleb128 0x4
+ 501 0178 AB020000 		.4byte	.LASF30
+ 502 017c 04       		.byte	0x4
+ 503 017d 3401     		.2byte	0x134
+ 504 017f E1000000 		.4byte	0xe1
+ 505 0183 0C       		.uleb128 0xc
+ 506 0184 10       		.byte	0x10
+ 507 0185 04       		.byte	0x4
+ 508 0186 3A01     		.2byte	0x13a
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 14
+
+
+ 509 0188 9A010000 		.4byte	0x19a
+ 510 018c 0B       		.uleb128 0xb
+ 511 018d 00010000 		.4byte	.LASF31
+ 512 0191 04       		.byte	0x4
+ 513 0192 3F01     		.2byte	0x13f
+ 514 0194 77010000 		.4byte	0x177
+ 515 0198 00       		.byte	0
+ 516 0199 00       		.byte	0
+ 517 019a 04       		.uleb128 0x4
+ 518 019b C3050000 		.4byte	.LASF32
+ 519 019f 04       		.byte	0x4
+ 520 01a0 4001     		.2byte	0x140
+ 521 01a2 83010000 		.4byte	0x183
+ 522 01a6 0C       		.uleb128 0xc
+ 523 01a7 0A       		.byte	0xa
+ 524 01a8 04       		.byte	0x4
+ 525 01a9 4601     		.2byte	0x146
+ 526 01ab FE010000 		.4byte	0x1fe
+ 527 01af 0D       		.uleb128 0xd
+ 528 01b0 72617700 		.ascii	"raw\000"
+ 529 01b4 04       		.byte	0x4
+ 530 01b5 4B01     		.2byte	0x14b
+ 531 01b7 FE010000 		.4byte	0x1fe
+ 532 01bb 00       		.byte	0
+ 533 01bc 0B       		.uleb128 0xb
+ 534 01bd CC010000 		.4byte	.LASF33
+ 535 01c1 04       		.byte	0x4
+ 536 01c2 5001     		.2byte	0x150
+ 537 01c4 FE010000 		.4byte	0x1fe
+ 538 01c8 02       		.byte	0x2
+ 539 01c9 0B       		.uleb128 0xb
+ 540 01ca AE010000 		.4byte	.LASF34
+ 541 01ce 04       		.byte	0x4
+ 542 01cf 5601     		.2byte	0x156
+ 543 01d1 D1000000 		.4byte	0xd1
+ 544 01d5 04       		.byte	0x4
+ 545 01d6 0B       		.uleb128 0xb
+ 546 01d7 84000000 		.4byte	.LASF35
+ 547 01db 04       		.byte	0x4
+ 548 01dc 5B01     		.2byte	0x15b
+ 549 01de B9000000 		.4byte	0xb9
+ 550 01e2 06       		.byte	0x6
+ 551 01e3 0B       		.uleb128 0xb
+ 552 01e4 02050000 		.4byte	.LASF36
+ 553 01e8 04       		.byte	0x4
+ 554 01e9 6001     		.2byte	0x160
+ 555 01eb 0E020000 		.4byte	0x20e
+ 556 01ef 08       		.byte	0x8
+ 557 01f0 0B       		.uleb128 0xb
+ 558 01f1 F9040000 		.4byte	.LASF37
+ 559 01f5 04       		.byte	0x4
+ 560 01f6 6501     		.2byte	0x165
+ 561 01f8 D1000000 		.4byte	0xd1
+ 562 01fc 09       		.byte	0x9
+ 563 01fd 00       		.byte	0
+ 564 01fe 07       		.uleb128 0x7
+ 565 01ff 77000000 		.4byte	0x77
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 15
+
+
+ 566 0203 0E020000 		.4byte	0x20e
+ 567 0207 08       		.uleb128 0x8
+ 568 0208 B0000000 		.4byte	0xb0
+ 569 020c 00       		.byte	0
+ 570 020d 00       		.byte	0
+ 571 020e 07       		.uleb128 0x7
+ 572 020f C5000000 		.4byte	0xc5
+ 573 0213 1E020000 		.4byte	0x21e
+ 574 0217 08       		.uleb128 0x8
+ 575 0218 B0000000 		.4byte	0xb0
+ 576 021c 00       		.byte	0
+ 577 021d 00       		.byte	0
+ 578 021e 04       		.uleb128 0x4
+ 579 021f 36000000 		.4byte	.LASF38
+ 580 0223 04       		.byte	0x4
+ 581 0224 6601     		.2byte	0x166
+ 582 0226 A6010000 		.4byte	0x1a6
+ 583 022a 0C       		.uleb128 0xc
+ 584 022b 0A       		.byte	0xa
+ 585 022c 04       		.byte	0x4
+ 586 022d 6C01     		.2byte	0x16c
+ 587 022f 41020000 		.4byte	0x241
+ 588 0233 0B       		.uleb128 0xb
+ 589 0234 00010000 		.4byte	.LASF31
+ 590 0238 04       		.byte	0x4
+ 591 0239 7101     		.2byte	0x171
+ 592 023b 41020000 		.4byte	0x241
+ 593 023f 00       		.byte	0
+ 594 0240 00       		.byte	0
+ 595 0241 07       		.uleb128 0x7
+ 596 0242 1E020000 		.4byte	0x21e
+ 597 0246 51020000 		.4byte	0x251
+ 598 024a 08       		.uleb128 0x8
+ 599 024b B0000000 		.4byte	0xb0
+ 600 024f 00       		.byte	0
+ 601 0250 00       		.byte	0
+ 602 0251 04       		.uleb128 0x4
+ 603 0252 69030000 		.4byte	.LASF39
+ 604 0256 04       		.byte	0x4
+ 605 0257 7201     		.2byte	0x172
+ 606 0259 2A020000 		.4byte	0x22a
+ 607 025d 0C       		.uleb128 0xc
+ 608 025e 40       		.byte	0x40
+ 609 025f 04       		.byte	0x4
+ 610 0260 7801     		.2byte	0x178
+ 611 0262 5E030000 		.4byte	0x35e
+ 612 0266 0B       		.uleb128 0xb
+ 613 0267 65020000 		.4byte	.LASF40
+ 614 026b 04       		.byte	0x4
+ 615 026c 7F01     		.2byte	0x17f
+ 616 026e 77000000 		.4byte	0x77
+ 617 0272 00       		.byte	0
+ 618 0273 0B       		.uleb128 0xb
+ 619 0274 A2020000 		.4byte	.LASF41
+ 620 0278 04       		.byte	0x4
+ 621 0279 8401     		.2byte	0x184
+ 622 027b 77000000 		.4byte	0x77
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 16
+
+
+ 623 027f 02       		.byte	0x2
+ 624 0280 0B       		.uleb128 0xb
+ 625 0281 2E030000 		.4byte	.LASF42
+ 626 0285 04       		.byte	0x4
+ 627 0286 8901     		.2byte	0x189
+ 628 0288 77000000 		.4byte	0x77
+ 629 028c 04       		.byte	0x4
+ 630 028d 0B       		.uleb128 0xb
+ 631 028e 5A030000 		.4byte	.LASF43
+ 632 0292 04       		.byte	0x4
+ 633 0293 8F01     		.2byte	0x18f
+ 634 0295 77000000 		.4byte	0x77
+ 635 0299 06       		.byte	0x6
+ 636 029a 0B       		.uleb128 0xb
+ 637 029b 3F030000 		.4byte	.LASF44
+ 638 029f 04       		.byte	0x4
+ 639 02a0 9401     		.2byte	0x194
+ 640 02a2 77000000 		.4byte	0x77
+ 641 02a6 08       		.byte	0x8
+ 642 02a7 0B       		.uleb128 0xb
+ 643 02a8 4B050000 		.4byte	.LASF45
+ 644 02ac 04       		.byte	0x4
+ 645 02ad 9901     		.2byte	0x199
+ 646 02af A4000000 		.4byte	0xa4
+ 647 02b3 0C       		.byte	0xc
+ 648 02b4 0B       		.uleb128 0xb
+ 649 02b5 13020000 		.4byte	.LASF46
+ 650 02b9 04       		.byte	0x4
+ 651 02ba 9F01     		.2byte	0x19f
+ 652 02bc 5E030000 		.4byte	0x35e
+ 653 02c0 10       		.byte	0x10
+ 654 02c1 0B       		.uleb128 0xb
+ 655 02c2 C1010000 		.4byte	.LASF47
+ 656 02c6 04       		.byte	0x4
+ 657 02c7 A601     		.2byte	0x1a6
+ 658 02c9 5E030000 		.4byte	0x35e
+ 659 02cd 14       		.byte	0x14
+ 660 02ce 0B       		.uleb128 0xb
+ 661 02cf 31010000 		.4byte	.LASF48
+ 662 02d3 04       		.byte	0x4
+ 663 02d4 B601     		.2byte	0x1b6
+ 664 02d6 D1000000 		.4byte	0xd1
+ 665 02da 18       		.byte	0x18
+ 666 02db 0B       		.uleb128 0xb
+ 667 02dc 0D030000 		.4byte	.LASF49
+ 668 02e0 04       		.byte	0x4
+ 669 02e1 BC01     		.2byte	0x1bc
+ 670 02e3 77000000 		.4byte	0x77
+ 671 02e7 1A       		.byte	0x1a
+ 672 02e8 0B       		.uleb128 0xb
+ 673 02e9 44010000 		.4byte	.LASF50
+ 674 02ed 04       		.byte	0x4
+ 675 02ee C101     		.2byte	0x1c1
+ 676 02f0 6B000000 		.4byte	0x6b
+ 677 02f4 1C       		.byte	0x1c
+ 678 02f5 0B       		.uleb128 0xb
+ 679 02f6 19040000 		.4byte	.LASF51
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 17
+
+
+ 680 02fa 04       		.byte	0x4
+ 681 02fb C601     		.2byte	0x1c6
+ 682 02fd 9A010000 		.4byte	0x19a
+ 683 0301 1E       		.byte	0x1e
+ 684 0302 0B       		.uleb128 0xb
+ 685 0303 5D020000 		.4byte	.LASF52
+ 686 0307 04       		.byte	0x4
+ 687 0308 CB01     		.2byte	0x1cb
+ 688 030a 51020000 		.4byte	0x251
+ 689 030e 2E       		.byte	0x2e
+ 690 030f 0B       		.uleb128 0xb
+ 691 0310 DE010000 		.4byte	.LASF53
+ 692 0314 04       		.byte	0x4
+ 693 0315 D001     		.2byte	0x1d0
+ 694 0317 6B000000 		.4byte	0x6b
+ 695 031b 38       		.byte	0x38
+ 696 031c 0B       		.uleb128 0xb
+ 697 031d AD000000 		.4byte	.LASF54
+ 698 0321 04       		.byte	0x4
+ 699 0322 D501     		.2byte	0x1d5
+ 700 0324 6B000000 		.4byte	0x6b
+ 701 0328 39       		.byte	0x39
+ 702 0329 0B       		.uleb128 0xb
+ 703 032a DF050000 		.4byte	.LASF55
+ 704 032e 04       		.byte	0x4
+ 705 032f DA01     		.2byte	0x1da
+ 706 0331 77000000 		.4byte	0x77
+ 707 0335 3A       		.byte	0x3a
+ 708 0336 0B       		.uleb128 0xb
+ 709 0337 66010000 		.4byte	.LASF56
+ 710 033b 04       		.byte	0x4
+ 711 033c DF01     		.2byte	0x1df
+ 712 033e FE010000 		.4byte	0x1fe
+ 713 0342 3C       		.byte	0x3c
+ 714 0343 0B       		.uleb128 0xb
+ 715 0344 F6010000 		.4byte	.LASF57
+ 716 0348 04       		.byte	0x4
+ 717 0349 E401     		.2byte	0x1e4
+ 718 034b 6B000000 		.4byte	0x6b
+ 719 034f 3E       		.byte	0x3e
+ 720 0350 0B       		.uleb128 0xb
+ 721 0351 9F010000 		.4byte	.LASF58
+ 722 0355 04       		.byte	0x4
+ 723 0356 E901     		.2byte	0x1e9
+ 724 0358 6B000000 		.4byte	0x6b
+ 725 035c 3F       		.byte	0x3f
+ 726 035d 00       		.byte	0
+ 727 035e 07       		.uleb128 0x7
+ 728 035f 83000000 		.4byte	0x83
+ 729 0363 6E030000 		.4byte	0x36e
+ 730 0367 08       		.uleb128 0x8
+ 731 0368 B0000000 		.4byte	0xb0
+ 732 036c 00       		.byte	0
+ 733 036d 00       		.byte	0
+ 734 036e 04       		.uleb128 0x4
+ 735 036f 86030000 		.4byte	.LASF59
+ 736 0373 04       		.byte	0x4
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 18
+
+
+ 737 0374 EA01     		.2byte	0x1ea
+ 738 0376 5D020000 		.4byte	0x25d
+ 739 037a 0C       		.uleb128 0xc
+ 740 037b 1C       		.byte	0x1c
+ 741 037c 04       		.byte	0x4
+ 742 037d 5102     		.2byte	0x251
+ 743 037f F9030000 		.4byte	0x3f9
+ 744 0383 0B       		.uleb128 0xb
+ 745 0384 77000000 		.4byte	.LASF60
+ 746 0388 04       		.byte	0x4
+ 747 0389 5A02     		.2byte	0x25a
+ 748 038b F9030000 		.4byte	0x3f9
+ 749 038f 00       		.byte	0
+ 750 0390 0B       		.uleb128 0xb
+ 751 0391 96020000 		.4byte	.LASF61
+ 752 0395 04       		.byte	0x4
+ 753 0396 6102     		.2byte	0x261
+ 754 0398 B7000000 		.4byte	0xb7
+ 755 039c 04       		.byte	0x4
+ 756 039d 0B       		.uleb128 0xb
+ 757 039e 4E010000 		.4byte	.LASF62
+ 758 03a2 04       		.byte	0x4
+ 759 03a3 6702     		.2byte	0x267
+ 760 03a5 00040000 		.4byte	0x400
+ 761 03a9 08       		.byte	0x8
+ 762 03aa 0B       		.uleb128 0xb
+ 763 03ab E4030000 		.4byte	.LASF63
+ 764 03af 04       		.byte	0x4
+ 765 03b0 6D02     		.2byte	0x26d
+ 766 03b2 B7000000 		.4byte	0xb7
+ 767 03b6 0C       		.byte	0xc
+ 768 03b7 0B       		.uleb128 0xb
+ 769 03b8 1C050000 		.4byte	.LASF64
+ 770 03bc 04       		.byte	0x4
+ 771 03bd 7402     		.2byte	0x274
+ 772 03bf 06040000 		.4byte	0x406
+ 773 03c3 10       		.byte	0x10
+ 774 03c4 0B       		.uleb128 0xb
+ 775 03c5 F7020000 		.4byte	.LASF65
+ 776 03c9 04       		.byte	0x4
+ 777 03ca 7902     		.2byte	0x279
+ 778 03cc 83000000 		.4byte	0x83
+ 779 03d0 14       		.byte	0x14
+ 780 03d1 0B       		.uleb128 0xb
+ 781 03d2 10050000 		.4byte	.LASF66
+ 782 03d6 04       		.byte	0x4
+ 783 03d7 8002     		.2byte	0x280
+ 784 03d9 77000000 		.4byte	0x77
+ 785 03dd 18       		.byte	0x18
+ 786 03de 0B       		.uleb128 0xb
+ 787 03df 36030000 		.4byte	.LASF67
+ 788 03e3 04       		.byte	0x4
+ 789 03e4 8702     		.2byte	0x287
+ 790 03e6 6B000000 		.4byte	0x6b
+ 791 03ea 1A       		.byte	0x1a
+ 792 03eb 0B       		.uleb128 0xb
+ 793 03ec DA020000 		.4byte	.LASF68
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 19
+
+
+ 794 03f0 04       		.byte	0x4
+ 795 03f1 9102     		.2byte	0x291
+ 796 03f3 6B000000 		.4byte	0x6b
+ 797 03f7 1B       		.byte	0x1b
+ 798 03f8 00       		.byte	0
+ 799 03f9 0E       		.uleb128 0xe
+ 800 03fa 04       		.byte	0x4
+ 801 03fb FF030000 		.4byte	0x3ff
+ 802 03ff 0F       		.uleb128 0xf
+ 803 0400 0E       		.uleb128 0xe
+ 804 0401 04       		.byte	0x4
+ 805 0402 1E020000 		.4byte	0x21e
+ 806 0406 0E       		.uleb128 0xe
+ 807 0407 04       		.byte	0x4
+ 808 0408 6B000000 		.4byte	0x6b
+ 809 040c 04       		.uleb128 0x4
+ 810 040d 1D000000 		.4byte	.LASF69
+ 811 0411 04       		.byte	0x4
+ 812 0412 9202     		.2byte	0x292
+ 813 0414 7A030000 		.4byte	0x37a
+ 814 0418 0C       		.uleb128 0xc
+ 815 0419 1C       		.byte	0x1c
+ 816 041a 04       		.byte	0x4
+ 817 041b 9802     		.2byte	0x298
+ 818 041d 2F040000 		.4byte	0x42f
+ 819 0421 0B       		.uleb128 0xb
+ 820 0422 52050000 		.4byte	.LASF70
+ 821 0426 04       		.byte	0x4
+ 822 0427 9D02     		.2byte	0x29d
+ 823 0429 2F040000 		.4byte	0x42f
+ 824 042d 00       		.byte	0
+ 825 042e 00       		.byte	0
+ 826 042f 07       		.uleb128 0x7
+ 827 0430 0C040000 		.4byte	0x40c
+ 828 0434 3F040000 		.4byte	0x43f
+ 829 0438 08       		.uleb128 0x8
+ 830 0439 B0000000 		.4byte	0xb0
+ 831 043d 00       		.byte	0
+ 832 043e 00       		.byte	0
+ 833 043f 04       		.uleb128 0x4
+ 834 0440 2C050000 		.4byte	.LASF71
+ 835 0444 04       		.byte	0x4
+ 836 0445 9E02     		.2byte	0x29e
+ 837 0447 18040000 		.4byte	0x418
+ 838 044b 10       		.uleb128 0x10
+ 839 044c 01       		.byte	0x1
+ 840 044d 2C000000 		.4byte	0x2c
+ 841 0451 05       		.byte	0x5
+ 842 0452 2E       		.byte	0x2e
+ 843 0453 82040000 		.4byte	0x482
+ 844 0457 11       		.uleb128 0x11
+ 845 0458 76010000 		.4byte	.LASF72
+ 846 045c 00       		.byte	0
+ 847 045d 11       		.uleb128 0x11
+ 848 045e 17010000 		.4byte	.LASF73
+ 849 0462 01       		.byte	0x1
+ 850 0463 11       		.uleb128 0x11
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 20
+
+
+ 851 0464 76050000 		.4byte	.LASF74
+ 852 0468 02       		.byte	0x2
+ 853 0469 11       		.uleb128 0x11
+ 854 046a 5C050000 		.4byte	.LASF75
+ 855 046e 03       		.byte	0x3
+ 856 046f 11       		.uleb128 0x11
+ 857 0470 22040000 		.4byte	.LASF76
+ 858 0474 04       		.byte	0x4
+ 859 0475 11       		.uleb128 0x11
+ 860 0476 A8030000 		.4byte	.LASF77
+ 861 047a 05       		.byte	0x5
+ 862 047b 11       		.uleb128 0x11
+ 863 047c C9030000 		.4byte	.LASF78
+ 864 0480 06       		.byte	0x6
+ 865 0481 00       		.byte	0
+ 866 0482 12       		.uleb128 0x12
+ 867 0483 A5050000 		.4byte	.LASF79
+ 868 0487 05       		.byte	0x5
+ 869 0488 36       		.byte	0x36
+ 870 0489 4B040000 		.4byte	0x44b
+ 871 048d 13       		.uleb128 0x13
+ 872 048e 18030000 		.4byte	.LASF97
+ 873 0492 01       		.byte	0x1
+ 874 0493 44       		.byte	0x44
+ 875 0494 00000000 		.4byte	.LFB1
+ 876 0498 14000000 		.4byte	.LFE1-.LFB1
+ 877 049c 01       		.uleb128 0x1
+ 878 049d 9C       		.byte	0x9c
+ 879 049e AE040000 		.4byte	0x4ae
+ 880 04a2 14       		.uleb128 0x14
+ 881 04a3 9C050000 		.4byte	.LASF86
+ 882 04a7 01       		.byte	0x1
+ 883 04a8 46       		.byte	0x46
+ 884 04a9 AE040000 		.4byte	0x4ae
+ 885 04ad 00       		.byte	0
+ 886 04ae 0E       		.uleb128 0xe
+ 887 04af 04       		.byte	0x4
+ 888 04b0 B4040000 		.4byte	0x4b4
+ 889 04b4 05       		.uleb128 0x5
+ 890 04b5 6E030000 		.4byte	0x36e
+ 891 04b9 15       		.uleb128 0x15
+ 892 04ba 65000000 		.4byte	.LASF98
+ 893 04be 01       		.byte	0x1
+ 894 04bf 73       		.byte	0x73
+ 895 04c0 83000000 		.4byte	0x83
+ 896 04c4 00000000 		.4byte	.LFB2
+ 897 04c8 10010000 		.4byte	.LFE2-.LFB2
+ 898 04cc 01       		.uleb128 0x1
+ 899 04cd 9C       		.byte	0x9c
+ 900 04ce 86050000 		.4byte	0x586
+ 901 04d2 16       		.uleb128 0x16
+ 902 04d3 08010000 		.4byte	.LASF80
+ 903 04d7 01       		.byte	0x1
+ 904 04d8 75       		.byte	0x75
+ 905 04d9 6B000000 		.4byte	0x6b
+ 906 04dd 00000000 		.4byte	.LLST0
+ 907 04e1 16       		.uleb128 0x16
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 21
+
+
+ 908 04e2 C9020000 		.4byte	.LASF81
+ 909 04e6 01       		.byte	0x1
+ 910 04e7 76       		.byte	0x76
+ 911 04e8 83000000 		.4byte	0x83
+ 912 04ec 29000000 		.4byte	.LLST1
+ 913 04f0 16       		.uleb128 0x16
+ 914 04f1 A4000000 		.4byte	.LASF82
+ 915 04f5 01       		.byte	0x1
+ 916 04f6 77       		.byte	0x77
+ 917 04f7 83000000 		.4byte	0x83
+ 918 04fb 3C000000 		.4byte	.LLST2
+ 919 04ff 16       		.uleb128 0x16
+ 920 0500 B6010000 		.4byte	.LASF83
+ 921 0504 01       		.byte	0x1
+ 922 0505 78       		.byte	0x78
+ 923 0506 83000000 		.4byte	0x83
+ 924 050a 4F000000 		.4byte	.LLST3
+ 925 050e 16       		.uleb128 0x16
+ 926 050f EE010000 		.4byte	.LASF84
+ 927 0513 01       		.byte	0x1
+ 928 0514 79       		.byte	0x79
+ 929 0515 82040000 		.4byte	0x482
+ 930 0519 0F010000 		.4byte	.LLST4
+ 931 051d 16       		.uleb128 0x16
+ 932 051e 02040000 		.4byte	.LASF85
+ 933 0522 01       		.byte	0x1
+ 934 0523 7A       		.byte	0x7a
+ 935 0524 83000000 		.4byte	0x83
+ 936 0528 22010000 		.4byte	.LLST5
+ 937 052c 14       		.uleb128 0x14
+ 938 052d 9C050000 		.4byte	.LASF86
+ 939 0531 01       		.byte	0x1
+ 940 0532 7C       		.byte	0x7c
+ 941 0533 AE040000 		.4byte	0x4ae
+ 942 0537 16       		.uleb128 0x16
+ 943 0538 40020000 		.4byte	.LASF87
+ 944 053c 01       		.byte	0x1
+ 945 053d 7D       		.byte	0x7d
+ 946 053e 86050000 		.4byte	0x586
+ 947 0542 63010000 		.4byte	.LLST6
+ 948 0546 17       		.uleb128 0x17
+ 949 0547 12000000 		.4byte	.LVL3
+ 950 054b BF050000 		.4byte	0x5bf
+ 951 054f 17       		.uleb128 0x17
+ 952 0550 1C000000 		.4byte	.LVL4
+ 953 0554 CA050000 		.4byte	0x5ca
+ 954 0558 17       		.uleb128 0x17
+ 955 0559 46000000 		.4byte	.LVL10
+ 956 055d D5050000 		.4byte	0x5d5
+ 957 0561 17       		.uleb128 0x17
+ 958 0562 76000000 		.4byte	.LVL19
+ 959 0566 BF050000 		.4byte	0x5bf
+ 960 056a 17       		.uleb128 0x17
+ 961 056b 90000000 		.4byte	.LVL20
+ 962 056f CA050000 		.4byte	0x5ca
+ 963 0573 17       		.uleb128 0x17
+ 964 0574 E6000000 		.4byte	.LVL28
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 22
+
+
+ 965 0578 BF050000 		.4byte	0x5bf
+ 966 057c 17       		.uleb128 0x17
+ 967 057d F8000000 		.4byte	.LVL29
+ 968 0581 CA050000 		.4byte	0x5ca
+ 969 0585 00       		.byte	0
+ 970 0586 0E       		.uleb128 0xe
+ 971 0587 04       		.byte	0x4
+ 972 0588 8C050000 		.4byte	0x58c
+ 973 058c 05       		.uleb128 0x5
+ 974 058d 1E020000 		.4byte	0x21e
+ 975 0591 18       		.uleb128 0x18
+ 976 0592 42050000 		.4byte	.LASF88
+ 977 0596 01       		.byte	0x1
+ 978 0597 35       		.byte	0x35
+ 979 0598 83000000 		.4byte	0x83
+ 980 059c 05       		.uleb128 0x5
+ 981 059d 03       		.byte	0x3
+ 982 059e 00000000 		.4byte	tunerFsm
+ 983 05a2 19       		.uleb128 0x19
+ 984 05a3 4B030000 		.4byte	.LASF89
+ 985 05a7 04       		.byte	0x4
+ 986 05a8 5B04     		.2byte	0x45b
+ 987 05aa 6E030000 		.4byte	0x36e
+ 988 05ae 19       		.uleb128 0x19
+ 989 05af BD000000 		.4byte	.LASF90
+ 990 05b3 04       		.byte	0x4
+ 991 05b4 5C04     		.2byte	0x45c
+ 992 05b6 BA050000 		.4byte	0x5ba
+ 993 05ba 1A       		.uleb128 0x1a
+ 994 05bb 3F040000 		.4byte	0x43f
+ 995 05bf 1B       		.uleb128 0x1b
+ 996 05c0 1E020000 		.4byte	.LASF91
+ 997 05c4 1E020000 		.4byte	.LASF91
+ 998 05c8 06       		.byte	0x6
+ 999 05c9 F8       		.byte	0xf8
+ 1000 05ca 1B       		.uleb128 0x1b
+ 1001 05cb 07000000 		.4byte	.LASF92
+ 1002 05cf 07000000 		.4byte	.LASF92
+ 1003 05d3 06       		.byte	0x6
+ 1004 05d4 F9       		.byte	0xf9
+ 1005 05d5 1B       		.uleb128 0x1b
+ 1006 05d6 EA040000 		.4byte	.LASF93
+ 1007 05da EA040000 		.4byte	.LASF93
+ 1008 05de 07       		.byte	0x7
+ 1009 05df 3B       		.byte	0x3b
+ 1010 05e0 00       		.byte	0
+ 1011              		.section	.debug_abbrev,"",%progbits
+ 1012              	.Ldebug_abbrev0:
+ 1013 0000 01       		.uleb128 0x1
+ 1014 0001 11       		.uleb128 0x11
+ 1015 0002 01       		.byte	0x1
+ 1016 0003 25       		.uleb128 0x25
+ 1017 0004 0E       		.uleb128 0xe
+ 1018 0005 13       		.uleb128 0x13
+ 1019 0006 0B       		.uleb128 0xb
+ 1020 0007 03       		.uleb128 0x3
+ 1021 0008 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 23
+
+
+ 1022 0009 1B       		.uleb128 0x1b
+ 1023 000a 0E       		.uleb128 0xe
+ 1024 000b 55       		.uleb128 0x55
+ 1025 000c 17       		.uleb128 0x17
+ 1026 000d 11       		.uleb128 0x11
+ 1027 000e 01       		.uleb128 0x1
+ 1028 000f 10       		.uleb128 0x10
+ 1029 0010 17       		.uleb128 0x17
+ 1030 0011 00       		.byte	0
+ 1031 0012 00       		.byte	0
+ 1032 0013 02       		.uleb128 0x2
+ 1033 0014 24       		.uleb128 0x24
+ 1034 0015 00       		.byte	0
+ 1035 0016 0B       		.uleb128 0xb
+ 1036 0017 0B       		.uleb128 0xb
+ 1037 0018 3E       		.uleb128 0x3e
+ 1038 0019 0B       		.uleb128 0xb
+ 1039 001a 03       		.uleb128 0x3
+ 1040 001b 0E       		.uleb128 0xe
+ 1041 001c 00       		.byte	0
+ 1042 001d 00       		.byte	0
+ 1043 001e 03       		.uleb128 0x3
+ 1044 001f 24       		.uleb128 0x24
+ 1045 0020 00       		.byte	0
+ 1046 0021 0B       		.uleb128 0xb
+ 1047 0022 0B       		.uleb128 0xb
+ 1048 0023 3E       		.uleb128 0x3e
+ 1049 0024 0B       		.uleb128 0xb
+ 1050 0025 03       		.uleb128 0x3
+ 1051 0026 08       		.uleb128 0x8
+ 1052 0027 00       		.byte	0
+ 1053 0028 00       		.byte	0
+ 1054 0029 04       		.uleb128 0x4
+ 1055 002a 16       		.uleb128 0x16
+ 1056 002b 00       		.byte	0
+ 1057 002c 03       		.uleb128 0x3
+ 1058 002d 0E       		.uleb128 0xe
+ 1059 002e 3A       		.uleb128 0x3a
+ 1060 002f 0B       		.uleb128 0xb
+ 1061 0030 3B       		.uleb128 0x3b
+ 1062 0031 05       		.uleb128 0x5
+ 1063 0032 49       		.uleb128 0x49
+ 1064 0033 13       		.uleb128 0x13
+ 1065 0034 00       		.byte	0
+ 1066 0035 00       		.byte	0
+ 1067 0036 05       		.uleb128 0x5
+ 1068 0037 35       		.uleb128 0x35
+ 1069 0038 00       		.byte	0
+ 1070 0039 49       		.uleb128 0x49
+ 1071 003a 13       		.uleb128 0x13
+ 1072 003b 00       		.byte	0
+ 1073 003c 00       		.byte	0
+ 1074 003d 06       		.uleb128 0x6
+ 1075 003e 0F       		.uleb128 0xf
+ 1076 003f 00       		.byte	0
+ 1077 0040 0B       		.uleb128 0xb
+ 1078 0041 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 24
+
+
+ 1079 0042 00       		.byte	0
+ 1080 0043 00       		.byte	0
+ 1081 0044 07       		.uleb128 0x7
+ 1082 0045 01       		.uleb128 0x1
+ 1083 0046 01       		.byte	0x1
+ 1084 0047 49       		.uleb128 0x49
+ 1085 0048 13       		.uleb128 0x13
+ 1086 0049 01       		.uleb128 0x1
+ 1087 004a 13       		.uleb128 0x13
+ 1088 004b 00       		.byte	0
+ 1089 004c 00       		.byte	0
+ 1090 004d 08       		.uleb128 0x8
+ 1091 004e 21       		.uleb128 0x21
+ 1092 004f 00       		.byte	0
+ 1093 0050 49       		.uleb128 0x49
+ 1094 0051 13       		.uleb128 0x13
+ 1095 0052 2F       		.uleb128 0x2f
+ 1096 0053 0B       		.uleb128 0xb
+ 1097 0054 00       		.byte	0
+ 1098 0055 00       		.byte	0
+ 1099 0056 09       		.uleb128 0x9
+ 1100 0057 13       		.uleb128 0x13
+ 1101 0058 01       		.byte	0x1
+ 1102 0059 0B       		.uleb128 0xb
+ 1103 005a 0B       		.uleb128 0xb
+ 1104 005b 3A       		.uleb128 0x3a
+ 1105 005c 0B       		.uleb128 0xb
+ 1106 005d 3B       		.uleb128 0x3b
+ 1107 005e 0B       		.uleb128 0xb
+ 1108 005f 01       		.uleb128 0x1
+ 1109 0060 13       		.uleb128 0x13
+ 1110 0061 00       		.byte	0
+ 1111 0062 00       		.byte	0
+ 1112 0063 0A       		.uleb128 0xa
+ 1113 0064 0D       		.uleb128 0xd
+ 1114 0065 00       		.byte	0
+ 1115 0066 03       		.uleb128 0x3
+ 1116 0067 0E       		.uleb128 0xe
+ 1117 0068 3A       		.uleb128 0x3a
+ 1118 0069 0B       		.uleb128 0xb
+ 1119 006a 3B       		.uleb128 0x3b
+ 1120 006b 0B       		.uleb128 0xb
+ 1121 006c 49       		.uleb128 0x49
+ 1122 006d 13       		.uleb128 0x13
+ 1123 006e 38       		.uleb128 0x38
+ 1124 006f 0B       		.uleb128 0xb
+ 1125 0070 00       		.byte	0
+ 1126 0071 00       		.byte	0
+ 1127 0072 0B       		.uleb128 0xb
+ 1128 0073 0D       		.uleb128 0xd
+ 1129 0074 00       		.byte	0
+ 1130 0075 03       		.uleb128 0x3
+ 1131 0076 0E       		.uleb128 0xe
+ 1132 0077 3A       		.uleb128 0x3a
+ 1133 0078 0B       		.uleb128 0xb
+ 1134 0079 3B       		.uleb128 0x3b
+ 1135 007a 05       		.uleb128 0x5
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 25
+
+
+ 1136 007b 49       		.uleb128 0x49
+ 1137 007c 13       		.uleb128 0x13
+ 1138 007d 38       		.uleb128 0x38
+ 1139 007e 0B       		.uleb128 0xb
+ 1140 007f 00       		.byte	0
+ 1141 0080 00       		.byte	0
+ 1142 0081 0C       		.uleb128 0xc
+ 1143 0082 13       		.uleb128 0x13
+ 1144 0083 01       		.byte	0x1
+ 1145 0084 0B       		.uleb128 0xb
+ 1146 0085 0B       		.uleb128 0xb
+ 1147 0086 3A       		.uleb128 0x3a
+ 1148 0087 0B       		.uleb128 0xb
+ 1149 0088 3B       		.uleb128 0x3b
+ 1150 0089 05       		.uleb128 0x5
+ 1151 008a 01       		.uleb128 0x1
+ 1152 008b 13       		.uleb128 0x13
+ 1153 008c 00       		.byte	0
+ 1154 008d 00       		.byte	0
+ 1155 008e 0D       		.uleb128 0xd
+ 1156 008f 0D       		.uleb128 0xd
+ 1157 0090 00       		.byte	0
+ 1158 0091 03       		.uleb128 0x3
+ 1159 0092 08       		.uleb128 0x8
+ 1160 0093 3A       		.uleb128 0x3a
+ 1161 0094 0B       		.uleb128 0xb
+ 1162 0095 3B       		.uleb128 0x3b
+ 1163 0096 05       		.uleb128 0x5
+ 1164 0097 49       		.uleb128 0x49
+ 1165 0098 13       		.uleb128 0x13
+ 1166 0099 38       		.uleb128 0x38
+ 1167 009a 0B       		.uleb128 0xb
+ 1168 009b 00       		.byte	0
+ 1169 009c 00       		.byte	0
+ 1170 009d 0E       		.uleb128 0xe
+ 1171 009e 0F       		.uleb128 0xf
+ 1172 009f 00       		.byte	0
+ 1173 00a0 0B       		.uleb128 0xb
+ 1174 00a1 0B       		.uleb128 0xb
+ 1175 00a2 49       		.uleb128 0x49
+ 1176 00a3 13       		.uleb128 0x13
+ 1177 00a4 00       		.byte	0
+ 1178 00a5 00       		.byte	0
+ 1179 00a6 0F       		.uleb128 0xf
+ 1180 00a7 26       		.uleb128 0x26
+ 1181 00a8 00       		.byte	0
+ 1182 00a9 00       		.byte	0
+ 1183 00aa 00       		.byte	0
+ 1184 00ab 10       		.uleb128 0x10
+ 1185 00ac 04       		.uleb128 0x4
+ 1186 00ad 01       		.byte	0x1
+ 1187 00ae 0B       		.uleb128 0xb
+ 1188 00af 0B       		.uleb128 0xb
+ 1189 00b0 49       		.uleb128 0x49
+ 1190 00b1 13       		.uleb128 0x13
+ 1191 00b2 3A       		.uleb128 0x3a
+ 1192 00b3 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 26
+
+
+ 1193 00b4 3B       		.uleb128 0x3b
+ 1194 00b5 0B       		.uleb128 0xb
+ 1195 00b6 01       		.uleb128 0x1
+ 1196 00b7 13       		.uleb128 0x13
+ 1197 00b8 00       		.byte	0
+ 1198 00b9 00       		.byte	0
+ 1199 00ba 11       		.uleb128 0x11
+ 1200 00bb 28       		.uleb128 0x28
+ 1201 00bc 00       		.byte	0
+ 1202 00bd 03       		.uleb128 0x3
+ 1203 00be 0E       		.uleb128 0xe
+ 1204 00bf 1C       		.uleb128 0x1c
+ 1205 00c0 0B       		.uleb128 0xb
+ 1206 00c1 00       		.byte	0
+ 1207 00c2 00       		.byte	0
+ 1208 00c3 12       		.uleb128 0x12
+ 1209 00c4 16       		.uleb128 0x16
+ 1210 00c5 00       		.byte	0
+ 1211 00c6 03       		.uleb128 0x3
+ 1212 00c7 0E       		.uleb128 0xe
+ 1213 00c8 3A       		.uleb128 0x3a
+ 1214 00c9 0B       		.uleb128 0xb
+ 1215 00ca 3B       		.uleb128 0x3b
+ 1216 00cb 0B       		.uleb128 0xb
+ 1217 00cc 49       		.uleb128 0x49
+ 1218 00cd 13       		.uleb128 0x13
+ 1219 00ce 00       		.byte	0
+ 1220 00cf 00       		.byte	0
+ 1221 00d0 13       		.uleb128 0x13
+ 1222 00d1 2E       		.uleb128 0x2e
+ 1223 00d2 01       		.byte	0x1
+ 1224 00d3 3F       		.uleb128 0x3f
+ 1225 00d4 19       		.uleb128 0x19
+ 1226 00d5 03       		.uleb128 0x3
+ 1227 00d6 0E       		.uleb128 0xe
+ 1228 00d7 3A       		.uleb128 0x3a
+ 1229 00d8 0B       		.uleb128 0xb
+ 1230 00d9 3B       		.uleb128 0x3b
+ 1231 00da 0B       		.uleb128 0xb
+ 1232 00db 27       		.uleb128 0x27
+ 1233 00dc 19       		.uleb128 0x19
+ 1234 00dd 11       		.uleb128 0x11
+ 1235 00de 01       		.uleb128 0x1
+ 1236 00df 12       		.uleb128 0x12
+ 1237 00e0 06       		.uleb128 0x6
+ 1238 00e1 40       		.uleb128 0x40
+ 1239 00e2 18       		.uleb128 0x18
+ 1240 00e3 9742     		.uleb128 0x2117
+ 1241 00e5 19       		.uleb128 0x19
+ 1242 00e6 01       		.uleb128 0x1
+ 1243 00e7 13       		.uleb128 0x13
+ 1244 00e8 00       		.byte	0
+ 1245 00e9 00       		.byte	0
+ 1246 00ea 14       		.uleb128 0x14
+ 1247 00eb 34       		.uleb128 0x34
+ 1248 00ec 00       		.byte	0
+ 1249 00ed 03       		.uleb128 0x3
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 27
+
+
+ 1250 00ee 0E       		.uleb128 0xe
+ 1251 00ef 3A       		.uleb128 0x3a
+ 1252 00f0 0B       		.uleb128 0xb
+ 1253 00f1 3B       		.uleb128 0x3b
+ 1254 00f2 0B       		.uleb128 0xb
+ 1255 00f3 49       		.uleb128 0x49
+ 1256 00f4 13       		.uleb128 0x13
+ 1257 00f5 00       		.byte	0
+ 1258 00f6 00       		.byte	0
+ 1259 00f7 15       		.uleb128 0x15
+ 1260 00f8 2E       		.uleb128 0x2e
+ 1261 00f9 01       		.byte	0x1
+ 1262 00fa 3F       		.uleb128 0x3f
+ 1263 00fb 19       		.uleb128 0x19
+ 1264 00fc 03       		.uleb128 0x3
+ 1265 00fd 0E       		.uleb128 0xe
+ 1266 00fe 3A       		.uleb128 0x3a
+ 1267 00ff 0B       		.uleb128 0xb
+ 1268 0100 3B       		.uleb128 0x3b
+ 1269 0101 0B       		.uleb128 0xb
+ 1270 0102 27       		.uleb128 0x27
+ 1271 0103 19       		.uleb128 0x19
+ 1272 0104 49       		.uleb128 0x49
+ 1273 0105 13       		.uleb128 0x13
+ 1274 0106 11       		.uleb128 0x11
+ 1275 0107 01       		.uleb128 0x1
+ 1276 0108 12       		.uleb128 0x12
+ 1277 0109 06       		.uleb128 0x6
+ 1278 010a 40       		.uleb128 0x40
+ 1279 010b 18       		.uleb128 0x18
+ 1280 010c 9742     		.uleb128 0x2117
+ 1281 010e 19       		.uleb128 0x19
+ 1282 010f 01       		.uleb128 0x1
+ 1283 0110 13       		.uleb128 0x13
+ 1284 0111 00       		.byte	0
+ 1285 0112 00       		.byte	0
+ 1286 0113 16       		.uleb128 0x16
+ 1287 0114 34       		.uleb128 0x34
+ 1288 0115 00       		.byte	0
+ 1289 0116 03       		.uleb128 0x3
+ 1290 0117 0E       		.uleb128 0xe
+ 1291 0118 3A       		.uleb128 0x3a
+ 1292 0119 0B       		.uleb128 0xb
+ 1293 011a 3B       		.uleb128 0x3b
+ 1294 011b 0B       		.uleb128 0xb
+ 1295 011c 49       		.uleb128 0x49
+ 1296 011d 13       		.uleb128 0x13
+ 1297 011e 02       		.uleb128 0x2
+ 1298 011f 17       		.uleb128 0x17
+ 1299 0120 00       		.byte	0
+ 1300 0121 00       		.byte	0
+ 1301 0122 17       		.uleb128 0x17
+ 1302 0123 898201   		.uleb128 0x4109
+ 1303 0126 00       		.byte	0
+ 1304 0127 11       		.uleb128 0x11
+ 1305 0128 01       		.uleb128 0x1
+ 1306 0129 31       		.uleb128 0x31
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 28
+
+
+ 1307 012a 13       		.uleb128 0x13
+ 1308 012b 00       		.byte	0
+ 1309 012c 00       		.byte	0
+ 1310 012d 18       		.uleb128 0x18
+ 1311 012e 34       		.uleb128 0x34
+ 1312 012f 00       		.byte	0
+ 1313 0130 03       		.uleb128 0x3
+ 1314 0131 0E       		.uleb128 0xe
+ 1315 0132 3A       		.uleb128 0x3a
+ 1316 0133 0B       		.uleb128 0xb
+ 1317 0134 3B       		.uleb128 0x3b
+ 1318 0135 0B       		.uleb128 0xb
+ 1319 0136 49       		.uleb128 0x49
+ 1320 0137 13       		.uleb128 0x13
+ 1321 0138 02       		.uleb128 0x2
+ 1322 0139 18       		.uleb128 0x18
+ 1323 013a 00       		.byte	0
+ 1324 013b 00       		.byte	0
+ 1325 013c 19       		.uleb128 0x19
+ 1326 013d 34       		.uleb128 0x34
+ 1327 013e 00       		.byte	0
+ 1328 013f 03       		.uleb128 0x3
+ 1329 0140 0E       		.uleb128 0xe
+ 1330 0141 3A       		.uleb128 0x3a
+ 1331 0142 0B       		.uleb128 0xb
+ 1332 0143 3B       		.uleb128 0x3b
+ 1333 0144 05       		.uleb128 0x5
+ 1334 0145 49       		.uleb128 0x49
+ 1335 0146 13       		.uleb128 0x13
+ 1336 0147 3F       		.uleb128 0x3f
+ 1337 0148 19       		.uleb128 0x19
+ 1338 0149 3C       		.uleb128 0x3c
+ 1339 014a 19       		.uleb128 0x19
+ 1340 014b 00       		.byte	0
+ 1341 014c 00       		.byte	0
+ 1342 014d 1A       		.uleb128 0x1a
+ 1343 014e 26       		.uleb128 0x26
+ 1344 014f 00       		.byte	0
+ 1345 0150 49       		.uleb128 0x49
+ 1346 0151 13       		.uleb128 0x13
+ 1347 0152 00       		.byte	0
+ 1348 0153 00       		.byte	0
+ 1349 0154 1B       		.uleb128 0x1b
+ 1350 0155 2E       		.uleb128 0x2e
+ 1351 0156 00       		.byte	0
+ 1352 0157 3F       		.uleb128 0x3f
+ 1353 0158 19       		.uleb128 0x19
+ 1354 0159 3C       		.uleb128 0x3c
+ 1355 015a 19       		.uleb128 0x19
+ 1356 015b 6E       		.uleb128 0x6e
+ 1357 015c 0E       		.uleb128 0xe
+ 1358 015d 03       		.uleb128 0x3
+ 1359 015e 0E       		.uleb128 0xe
+ 1360 015f 3A       		.uleb128 0x3a
+ 1361 0160 0B       		.uleb128 0xb
+ 1362 0161 3B       		.uleb128 0x3b
+ 1363 0162 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 29
+
+
+ 1364 0163 00       		.byte	0
+ 1365 0164 00       		.byte	0
+ 1366 0165 00       		.byte	0
+ 1367              		.section	.debug_loc,"",%progbits
+ 1368              	.Ldebug_loc0:
+ 1369              	.LLST0:
+ 1370 0000 12000000 		.4byte	.LVL3
+ 1371 0004 1B000000 		.4byte	.LVL4-1
+ 1372 0008 0100     		.2byte	0x1
+ 1373 000a 50       		.byte	0x50
+ 1374 000b 76000000 		.4byte	.LVL19
+ 1375 000f 8F000000 		.4byte	.LVL20-1
+ 1376 0013 0100     		.2byte	0x1
+ 1377 0015 50       		.byte	0x50
+ 1378 0016 E6000000 		.4byte	.LVL28
+ 1379 001a F7000000 		.4byte	.LVL29-1
+ 1380 001e 0100     		.2byte	0x1
+ 1381 0020 50       		.byte	0x50
+ 1382 0021 00000000 		.4byte	0
+ 1383 0025 00000000 		.4byte	0
+ 1384              	.LLST1:
+ 1385 0029 A6000000 		.4byte	.LVL22
+ 1386 002d D2000000 		.4byte	.LVL24
+ 1387 0031 0100     		.2byte	0x1
+ 1388 0033 53       		.byte	0x53
+ 1389 0034 00000000 		.4byte	0
+ 1390 0038 00000000 		.4byte	0
+ 1391              	.LLST2:
+ 1392 003c AC000000 		.4byte	.LVL23
+ 1393 0040 DE000000 		.4byte	.LVL26
+ 1394 0044 0100     		.2byte	0x1
+ 1395 0046 52       		.byte	0x52
+ 1396 0047 00000000 		.4byte	0
+ 1397 004b 00000000 		.4byte	0
+ 1398              	.LLST3:
+ 1399 004f 02000000 		.4byte	.LVL1
+ 1400 0053 06000000 		.4byte	.LVL2
+ 1401 0057 0200     		.2byte	0x2
+ 1402 0059 30       		.byte	0x30
+ 1403 005a 9F       		.byte	0x9f
+ 1404 005b 06000000 		.4byte	.LVL2
+ 1405 005f 34000000 		.4byte	.LVL6
+ 1406 0063 0100     		.2byte	0x1
+ 1407 0065 56       		.byte	0x56
+ 1408 0066 34000000 		.4byte	.LVL6
+ 1409 006a 38000000 		.4byte	.LVL7
+ 1410 006e 0200     		.2byte	0x2
+ 1411 0070 31       		.byte	0x31
+ 1412 0071 9F       		.byte	0x9f
+ 1413 0072 38000000 		.4byte	.LVL7
+ 1414 0076 3E000000 		.4byte	.LVL8
+ 1415 007a 0100     		.2byte	0x1
+ 1416 007c 56       		.byte	0x56
+ 1417 007d 3E000000 		.4byte	.LVL8
+ 1418 0081 42000000 		.4byte	.LVL9
+ 1419 0085 0200     		.2byte	0x2
+ 1420 0087 31       		.byte	0x31
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 30
+
+
+ 1421 0088 9F       		.byte	0x9f
+ 1422 0089 42000000 		.4byte	.LVL9
+ 1423 008d 4C000000 		.4byte	.LVL11
+ 1424 0091 0100     		.2byte	0x1
+ 1425 0093 56       		.byte	0x56
+ 1426 0094 4C000000 		.4byte	.LVL11
+ 1427 0098 52000000 		.4byte	.LVL12
+ 1428 009c 0200     		.2byte	0x2
+ 1429 009e 31       		.byte	0x31
+ 1430 009f 9F       		.byte	0x9f
+ 1431 00a0 52000000 		.4byte	.LVL12
+ 1432 00a4 58000000 		.4byte	.LVL13
+ 1433 00a8 0100     		.2byte	0x1
+ 1434 00aa 56       		.byte	0x56
+ 1435 00ab 58000000 		.4byte	.LVL13
+ 1436 00af 5C000000 		.4byte	.LVL14
+ 1437 00b3 0200     		.2byte	0x2
+ 1438 00b5 31       		.byte	0x31
+ 1439 00b6 9F       		.byte	0x9f
+ 1440 00b7 5C000000 		.4byte	.LVL14
+ 1441 00bb 62000000 		.4byte	.LVL15
+ 1442 00bf 0100     		.2byte	0x1
+ 1443 00c1 56       		.byte	0x56
+ 1444 00c2 62000000 		.4byte	.LVL15
+ 1445 00c6 66000000 		.4byte	.LVL16
+ 1446 00ca 0200     		.2byte	0x2
+ 1447 00cc 31       		.byte	0x31
+ 1448 00cd 9F       		.byte	0x9f
+ 1449 00ce 66000000 		.4byte	.LVL16
+ 1450 00d2 6C000000 		.4byte	.LVL17
+ 1451 00d6 0100     		.2byte	0x1
+ 1452 00d8 56       		.byte	0x56
+ 1453 00d9 6C000000 		.4byte	.LVL17
+ 1454 00dd 6E000000 		.4byte	.LVL18
+ 1455 00e1 0200     		.2byte	0x2
+ 1456 00e3 30       		.byte	0x30
+ 1457 00e4 9F       		.byte	0x9f
+ 1458 00e5 6E000000 		.4byte	.LVL18
+ 1459 00e9 90000000 		.4byte	.LVL20
+ 1460 00ed 0100     		.2byte	0x1
+ 1461 00ef 56       		.byte	0x56
+ 1462 00f0 90000000 		.4byte	.LVL20
+ 1463 00f4 92000000 		.4byte	.LVL21
+ 1464 00f8 0200     		.2byte	0x2
+ 1465 00fa 30       		.byte	0x30
+ 1466 00fb 9F       		.byte	0x9f
+ 1467 00fc 92000000 		.4byte	.LVL21
+ 1468 0100 FA000000 		.4byte	.LVL31
+ 1469 0104 0100     		.2byte	0x1
+ 1470 0106 56       		.byte	0x56
+ 1471 0107 00000000 		.4byte	0
+ 1472 010b 00000000 		.4byte	0
+ 1473              	.LLST4:
+ 1474 010f 22000000 		.4byte	.LVL5
+ 1475 0113 DA000000 		.4byte	.LVL25
+ 1476 0117 0100     		.2byte	0x1
+ 1477 0119 54       		.byte	0x54
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 31
+
+
+ 1478 011a 00000000 		.4byte	0
+ 1479 011e 00000000 		.4byte	0
+ 1480              	.LLST5:
+ 1481 0122 02000000 		.4byte	.LVL1
+ 1482 0126 06000000 		.4byte	.LVL2
+ 1483 012a 0200     		.2byte	0x2
+ 1484 012c 30       		.byte	0x30
+ 1485 012d 9F       		.byte	0x9f
+ 1486 012e 06000000 		.4byte	.LVL2
+ 1487 0132 46000000 		.4byte	.LVL10
+ 1488 0136 0100     		.2byte	0x1
+ 1489 0138 55       		.byte	0x55
+ 1490 0139 46000000 		.4byte	.LVL10
+ 1491 013d 52000000 		.4byte	.LVL12
+ 1492 0141 0200     		.2byte	0x2
+ 1493 0143 31       		.byte	0x31
+ 1494 0144 9F       		.byte	0x9f
+ 1495 0145 52000000 		.4byte	.LVL12
+ 1496 0149 FA000000 		.4byte	.LVL30
+ 1497 014d 0100     		.2byte	0x1
+ 1498 014f 55       		.byte	0x55
+ 1499 0150 FA000000 		.4byte	.LVL30
+ 1500 0154 10010000 		.4byte	.LFE2
+ 1501 0158 0100     		.2byte	0x1
+ 1502 015a 50       		.byte	0x50
+ 1503 015b 00000000 		.4byte	0
+ 1504 015f 00000000 		.4byte	0
+ 1505              	.LLST6:
+ 1506 0163 DA000000 		.4byte	.LVL25
+ 1507 0167 F8000000 		.4byte	.LVL29
+ 1508 016b 0100     		.2byte	0x1
+ 1509 016d 54       		.byte	0x54
+ 1510 016e 00000000 		.4byte	0
+ 1511 0172 00000000 		.4byte	0
+ 1512              		.section	.debug_aranges,"",%progbits
+ 1513 0000 24000000 		.4byte	0x24
+ 1514 0004 0200     		.2byte	0x2
+ 1515 0006 00000000 		.4byte	.Ldebug_info0
+ 1516 000a 04       		.byte	0x4
+ 1517 000b 00       		.byte	0
+ 1518 000c 0000     		.2byte	0
+ 1519 000e 0000     		.2byte	0
+ 1520 0010 00000000 		.4byte	.LFB1
+ 1521 0014 14000000 		.4byte	.LFE1-.LFB1
+ 1522 0018 00000000 		.4byte	.LFB2
+ 1523 001c 10010000 		.4byte	.LFE2-.LFB2
+ 1524 0020 00000000 		.4byte	0
+ 1525 0024 00000000 		.4byte	0
+ 1526              		.section	.debug_ranges,"",%progbits
+ 1527              	.Ldebug_ranges0:
+ 1528 0000 00000000 		.4byte	.LFB1
+ 1529 0004 14000000 		.4byte	.LFE1
+ 1530 0008 00000000 		.4byte	.LFB2
+ 1531 000c 10010000 		.4byte	.LFE2
+ 1532 0010 00000000 		.4byte	0
+ 1533 0014 00000000 		.4byte	0
+ 1534              		.section	.debug_line,"",%progbits
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 32
+
+
+ 1535              	.Ldebug_line0:
+ 1536 0000 18010000 		.section	.debug_str,"MS",%progbits,1
+ 1536      0200B400 
+ 1536      00000201 
+ 1536      FB0E0D00 
+ 1536      01010101 
+ 1537              	.LASF10:
+ 1538 0000 75696E74 		.ascii	"uint16\000"
+ 1538      313600
+ 1539              	.LASF92:
+ 1540 0007 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1540      69744372 
+ 1540      69746963 
+ 1540      616C5365 
+ 1540      6374696F 
+ 1541              	.LASF69:
+ 1542 001d 43617053 		.ascii	"CapSense_FLASH_WD_STRUCT\000"
+ 1542      656E7365 
+ 1542      5F464C41 
+ 1542      53485F57 
+ 1542      445F5354 
+ 1543              	.LASF38:
+ 1544 0036 43617053 		.ascii	"CapSense_RAM_SNS_STRUCT\000"
+ 1544      656E7365 
+ 1544      5F52414D 
+ 1544      5F534E53 
+ 1544      5F535452 
+ 1545              	.LASF7:
+ 1546 004e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1546      206C6F6E 
+ 1546      6720756E 
+ 1546      7369676E 
+ 1546      65642069 
+ 1547              	.LASF98:
+ 1548 0065 43617053 		.ascii	"CapSense_RunTuner\000"
+ 1548      656E7365 
+ 1548      5F52756E 
+ 1548      54756E65 
+ 1548      7200
+ 1549              	.LASF60:
+ 1550 0077 70747232 		.ascii	"ptr2SnsFlash\000"
+ 1550      536E7346 
+ 1550      6C617368 
+ 1550      00
+ 1551              	.LASF35:
+ 1552 0084 64696666 		.ascii	"diff\000"
+ 1552      00
+ 1553              	.LASF18:
+ 1554 0089 43617053 		.ascii	"CapSense_LOW_BSLN_RST_TYPE\000"
+ 1554      656E7365 
+ 1554      5F4C4F57 
+ 1554      5F42534C 
+ 1554      4E5F5253 
+ 1555              	.LASF82:
+ 1556 00a4 73656E73 		.ascii	"sensorId\000"
+ 1556      6F724964 
+ 1556      00
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 33
+
+
+ 1557              	.LASF54:
+ 1558 00ad 736E7254 		.ascii	"snrTestSensorId\000"
+ 1558      65737453 
+ 1558      656E736F 
+ 1558      72496400 
+ 1559              	.LASF90:
+ 1560 00bd 43617053 		.ascii	"CapSense_dsFlash\000"
+ 1560      656E7365 
+ 1560      5F647346 
+ 1560      6C617368 
+ 1560      00
+ 1561              	.LASF17:
+ 1562 00ce 43617053 		.ascii	"CapSense_THRESHOLD_TYPE\000"
+ 1562      656E7365 
+ 1562      5F544852 
+ 1562      4553484F 
+ 1562      4C445F54 
+ 1563              	.LASF6:
+ 1564 00e6 6C6F6E67 		.ascii	"long long int\000"
+ 1564      206C6F6E 
+ 1564      6720696E 
+ 1564      7400
+ 1565              	.LASF0:
+ 1566 00f4 7369676E 		.ascii	"signed char\000"
+ 1566      65642063 
+ 1566      68617200 
+ 1567              	.LASF31:
+ 1568 0100 62757474 		.ascii	"button0\000"
+ 1568      6F6E3000 
+ 1569              	.LASF80:
+ 1570 0108 696E7465 		.ascii	"interruptState\000"
+ 1570      72727570 
+ 1570      74537461 
+ 1570      746500
+ 1571              	.LASF73:
+ 1572 0117 43617053 		.ascii	"CapSense_TU_CMD_SUSPEND_E\000"
+ 1572      656E7365 
+ 1572      5F54555F 
+ 1572      434D445F 
+ 1572      53555350 
+ 1573              	.LASF48:
+ 1574 0131 736E7353 		.ascii	"snsStatus\000"
+ 1574      74617475 
+ 1574      7300
+ 1575              	.LASF4:
+ 1576 013b 6C6F6E67 		.ascii	"long int\000"
+ 1576      20696E74 
+ 1576      00
+ 1577              	.LASF50:
+ 1578 0144 6D6F6443 		.ascii	"modCsdClk\000"
+ 1578      7364436C 
+ 1578      6B00
+ 1579              	.LASF62:
+ 1580 014e 70747232 		.ascii	"ptr2SnsRam\000"
+ 1580      536E7352 
+ 1580      616D00
+ 1581              	.LASF9:
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 34
+
+
+ 1582 0159 75696E74 		.ascii	"uint8\000"
+ 1582      3800
+ 1583              	.LASF13:
+ 1584 015f 646F7562 		.ascii	"double\000"
+ 1584      6C6500
+ 1585              	.LASF56:
+ 1586 0166 736E7254 		.ascii	"snrTestRawCount\000"
+ 1586      65737452 
+ 1586      6177436F 
+ 1586      756E7400 
+ 1587              	.LASF72:
+ 1588 0176 43617053 		.ascii	"CapSense_TU_CMD_NONE_E\000"
+ 1588      656E7365 
+ 1588      5F54555F 
+ 1588      434D445F 
+ 1588      4E4F4E45 
+ 1589              	.LASF11:
+ 1590 018d 75696E74 		.ascii	"uint32\000"
+ 1590      333200
+ 1591              	.LASF23:
+ 1592 0194 68797374 		.ascii	"hysteresis\000"
+ 1592      65726573 
+ 1592      697300
+ 1593              	.LASF58:
+ 1594 019f 7363616E 		.ascii	"scanCurrentISC\000"
+ 1594      43757272 
+ 1594      656E7449 
+ 1594      534300
+ 1595              	.LASF34:
+ 1596 01ae 62736C6E 		.ascii	"bslnExt\000"
+ 1596      45787400 
+ 1597              	.LASF83:
+ 1598 01b6 75706461 		.ascii	"updateFlag\000"
+ 1598      7465466C 
+ 1598      616700
+ 1599              	.LASF47:
+ 1600 01c1 77646774 		.ascii	"wdgtStatus\000"
+ 1600      53746174 
+ 1600      757300
+ 1601              	.LASF33:
+ 1602 01cc 62736C6E 		.ascii	"bsln\000"
+ 1602      00
+ 1603              	.LASF8:
+ 1604 01d1 756E7369 		.ascii	"unsigned int\000"
+ 1604      676E6564 
+ 1604      20696E74 
+ 1604      00
+ 1605              	.LASF53:
+ 1606 01de 736E7254 		.ascii	"snrTestWidgetId\000"
+ 1606      65737457 
+ 1606      69646765 
+ 1606      74496400 
+ 1607              	.LASF84:
+ 1608 01ee 636F6D6D 		.ascii	"command\000"
+ 1608      616E6400 
+ 1609              	.LASF57:
+ 1610 01f6 7363616E 		.ascii	"scanCsdISC\000"
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 35
+
+
+ 1610      43736449 
+ 1610      534300
+ 1611              	.LASF5:
+ 1612 0201 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1612      20756E73 
+ 1612      69676E65 
+ 1612      6420696E 
+ 1612      7400
+ 1613              	.LASF46:
+ 1614 0213 77646774 		.ascii	"wdgtEnable\000"
+ 1614      456E6162 
+ 1614      6C6500
+ 1615              	.LASF91:
+ 1616 021e 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1616      74657243 
+ 1616      72697469 
+ 1616      63616C53 
+ 1616      65637469 
+ 1617              	.LASF25:
+ 1618 0235 6C6F7742 		.ascii	"lowBslnRst\000"
+ 1618      736C6E52 
+ 1618      737400
+ 1619              	.LASF87:
+ 1620 0240 70747253 		.ascii	"ptrSnsTmp\000"
+ 1620      6E73546D 
+ 1620      7000
+ 1621              	.LASF3:
+ 1622 024a 73686F72 		.ascii	"short unsigned int\000"
+ 1622      7420756E 
+ 1622      7369676E 
+ 1622      65642069 
+ 1622      6E7400
+ 1623              	.LASF52:
+ 1624 025d 736E734C 		.ascii	"snsList\000"
+ 1624      69737400 
+ 1625              	.LASF40:
+ 1626 0265 636F6E66 		.ascii	"configId\000"
+ 1626      69674964 
+ 1626      00
+ 1627              	.LASF95:
+ 1628 026e 47656E65 		.ascii	"Generated_Source\\PSoC4\\CapSense_Tuner.c\000"
+ 1628      72617465 
+ 1628      645F536F 
+ 1628      75726365 
+ 1628      5C50536F 
+ 1629              	.LASF61:
+ 1630 0296 70747232 		.ascii	"ptr2WdgtRam\000"
+ 1630      57646774 
+ 1630      52616D00 
+ 1631              	.LASF41:
+ 1632 02a2 64657669 		.ascii	"deviceId\000"
+ 1632      63654964 
+ 1632      00
+ 1633              	.LASF30:
+ 1634 02ab 43617053 		.ascii	"CapSense_RAM_WD_BUTTON_STRUCT\000"
+ 1634      656E7365 
+ 1634      5F52414D 
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 36
+
+
+ 1634      5F57445F 
+ 1634      42555454 
+ 1635              	.LASF81:
+ 1636 02c9 77696467 		.ascii	"widgetId\000"
+ 1636      65744964 
+ 1636      00
+ 1637              	.LASF26:
+ 1638 02d2 69646163 		.ascii	"idacMod\000"
+ 1638      4D6F6400 
+ 1639              	.LASF68:
+ 1640 02da 6E756D43 		.ascii	"numCols\000"
+ 1640      6F6C7300 
+ 1641              	.LASF16:
+ 1642 02e2 73697A65 		.ascii	"sizetype\000"
+ 1642      74797065 
+ 1642      00
+ 1643              	.LASF15:
+ 1644 02eb 6C6F6E67 		.ascii	"long double\000"
+ 1644      20646F75 
+ 1644      626C6500 
+ 1645              	.LASF65:
+ 1646 02f7 73746174 		.ascii	"staticConfig\000"
+ 1646      6963436F 
+ 1646      6E666967 
+ 1646      00
+ 1647              	.LASF22:
+ 1648 0304 6E4E6F69 		.ascii	"nNoiseTh\000"
+ 1648      73655468 
+ 1648      00
+ 1649              	.LASF49:
+ 1650 030d 63736430 		.ascii	"csd0Config\000"
+ 1650      436F6E66 
+ 1650      696700
+ 1651              	.LASF97:
+ 1652 0318 43617053 		.ascii	"CapSense_TuInitialize\000"
+ 1652      656E7365 
+ 1652      5F547549 
+ 1652      6E697469 
+ 1652      616C697A 
+ 1653              	.LASF42:
+ 1654 032e 6877436C 		.ascii	"hwClock\000"
+ 1654      6F636B00 
+ 1655              	.LASF67:
+ 1656 0336 77646774 		.ascii	"wdgtType\000"
+ 1656      54797065 
+ 1656      00
+ 1657              	.LASF44:
+ 1658 033f 7363616E 		.ascii	"scanCounter\000"
+ 1658      436F756E 
+ 1658      74657200 
+ 1659              	.LASF89:
+ 1660 034b 43617053 		.ascii	"CapSense_dsRam\000"
+ 1660      656E7365 
+ 1660      5F647352 
+ 1660      616D00
+ 1661              	.LASF43:
+ 1662 035a 74756E65 		.ascii	"tunerCmd\000"
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 37
+
+
+ 1662      72436D64 
+ 1662      00
+ 1663              	.LASF12:
+ 1664 0363 666C6F61 		.ascii	"float\000"
+ 1664      7400
+ 1665              	.LASF39:
+ 1666 0369 43617053 		.ascii	"CapSense_RAM_SNS_LIST_STRUCT\000"
+ 1666      656E7365 
+ 1666      5F52414D 
+ 1666      5F534E53 
+ 1666      5F4C4953 
+ 1667              	.LASF59:
+ 1668 0386 43617053 		.ascii	"CapSense_RAM_STRUCT\000"
+ 1668      656E7365 
+ 1668      5F52414D 
+ 1668      5F535452 
+ 1668      55435400 
+ 1669              	.LASF1:
+ 1670 039a 756E7369 		.ascii	"unsigned char\000"
+ 1670      676E6564 
+ 1670      20636861 
+ 1670      7200
+ 1671              	.LASF77:
+ 1672 03a8 43617053 		.ascii	"CapSense_TU_CMD_PING_E\000"
+ 1672      656E7365 
+ 1672      5F54555F 
+ 1672      434D445F 
+ 1672      50494E47 
+ 1673              	.LASF2:
+ 1674 03bf 73686F72 		.ascii	"short int\000"
+ 1674      7420696E 
+ 1674      7400
+ 1675              	.LASF78:
+ 1676 03c9 43617053 		.ascii	"CapSense_TU_CMD_ONE_SCAN_E\000"
+ 1676      656E7365 
+ 1676      5F54555F 
+ 1676      434D445F 
+ 1676      4F4E455F 
+ 1677              	.LASF63:
+ 1678 03e4 70747232 		.ascii	"ptr2FltrHistory\000"
+ 1678      466C7472 
+ 1678      48697374 
+ 1678      6F727900 
+ 1679              	.LASF27:
+ 1680 03f4 69646163 		.ascii	"idacGainIndex\000"
+ 1680      4761696E 
+ 1680      496E6465 
+ 1680      7800
+ 1681              	.LASF85:
+ 1682 0402 74756E65 		.ascii	"tunerStatus\000"
+ 1682      72537461 
+ 1682      74757300 
+ 1683              	.LASF19:
+ 1684 040e 7265736F 		.ascii	"resolution\000"
+ 1684      6C757469 
+ 1684      6F6E00
+ 1685              	.LASF51:
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 38
+
+
+ 1686 0419 77646774 		.ascii	"wdgtList\000"
+ 1686      4C697374 
+ 1686      00
+ 1687              	.LASF76:
+ 1688 0422 43617053 		.ascii	"CapSense_TU_CMD_RUN_SNR_TEST_E\000"
+ 1688      656E7365 
+ 1688      5F54555F 
+ 1688      434D445F 
+ 1688      52554E5F 
+ 1689              	.LASF94:
+ 1690 0441 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1690      43313120 
+ 1690      352E342E 
+ 1690      31203230 
+ 1690      31363036 
+ 1691 0474 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 1691      20726576 
+ 1691      6973696F 
+ 1691      6E203233 
+ 1691      37373135 
+ 1692 04a7 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1692      67202D66 
+ 1692      66756E63 
+ 1692      74696F6E 
+ 1692      2D736563 
+ 1693              	.LASF14:
+ 1694 04d3 63686172 		.ascii	"char\000"
+ 1694      00
+ 1695              	.LASF28:
+ 1696 04d8 736E7343 		.ascii	"snsClk\000"
+ 1696      6C6B00
+ 1697              	.LASF24:
+ 1698 04df 6F6E4465 		.ascii	"onDebounce\000"
+ 1698      626F756E 
+ 1698      636500
+ 1699              	.LASF93:
+ 1700 04ea 43617053 		.ascii	"CapSense_Start\000"
+ 1700      656E7365 
+ 1700      5F537461 
+ 1700      727400
+ 1701              	.LASF37:
+ 1702 04f9 69646163 		.ascii	"idacComp\000"
+ 1702      436F6D70 
+ 1702      00
+ 1703              	.LASF36:
+ 1704 0502 6E656742 		.ascii	"negBslnRstCnt\000"
+ 1704      736C6E52 
+ 1704      7374436E 
+ 1704      7400
+ 1705              	.LASF66:
+ 1706 0510 746F7461 		.ascii	"totalNumSns\000"
+ 1706      6C4E756D 
+ 1706      536E7300 
+ 1707              	.LASF64:
+ 1708 051c 70747232 		.ascii	"ptr2DebounceArr\000"
+ 1708      4465626F 
+ 1708      756E6365 
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 39
+
+
+ 1708      41727200 
+ 1709              	.LASF71:
+ 1710 052c 43617053 		.ascii	"CapSense_FLASH_STRUCT\000"
+ 1710      656E7365 
+ 1710      5F464C41 
+ 1710      53485F53 
+ 1710      54525543 
+ 1711              	.LASF88:
+ 1712 0542 74756E65 		.ascii	"tunerFsm\000"
+ 1712      7246736D 
+ 1712      00
+ 1713              	.LASF45:
+ 1714 054b 73746174 		.ascii	"status\000"
+ 1714      757300
+ 1715              	.LASF70:
+ 1716 0552 77646774 		.ascii	"wdgtArray\000"
+ 1716      41727261 
+ 1716      7900
+ 1717              	.LASF75:
+ 1718 055c 43617053 		.ascii	"CapSense_TU_CMD_RESTART_E\000"
+ 1718      656E7365 
+ 1718      5F54555F 
+ 1718      434D445F 
+ 1718      52455354 
+ 1719              	.LASF74:
+ 1720 0576 43617053 		.ascii	"CapSense_TU_CMD_RESUME_E\000"
+ 1720      656E7365 
+ 1720      5F54555F 
+ 1720      434D445F 
+ 1720      52455355 
+ 1721              	.LASF29:
+ 1722 058f 736E7343 		.ascii	"snsClkSource\000"
+ 1722      6C6B536F 
+ 1722      75726365 
+ 1722      00
+ 1723              	.LASF86:
+ 1724 059c 70747244 		.ascii	"ptrDsRam\000"
+ 1724      7352616D 
+ 1724      00
+ 1725              	.LASF79:
+ 1726 05a5 43617053 		.ascii	"CapSense_TU_CMD_ENUM\000"
+ 1726      656E7365 
+ 1726      5F54555F 
+ 1726      434D445F 
+ 1726      454E554D 
+ 1727              	.LASF20:
+ 1728 05ba 66696E67 		.ascii	"fingerTh\000"
+ 1728      65725468 
+ 1728      00
+ 1729              	.LASF32:
+ 1730 05c3 43617053 		.ascii	"CapSense_RAM_WD_LIST_STRUCT\000"
+ 1730      656E7365 
+ 1730      5F52414D 
+ 1730      5F57445F 
+ 1730      4C495354 
+ 1731              	.LASF55:
+ 1732 05df 736E7254 		.ascii	"snrTestScanCounter\000"
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccPF4120.s 			page 40
+
+
+ 1732      65737453 
+ 1732      63616E43 
+ 1732      6F756E74 
+ 1732      657200
+ 1733              	.LASF96:
+ 1734 05f2 433A5C55 		.ascii	"C:\\Users\\Lenovo\\Desktop\\PressureSensor\\Pressur"
+ 1734      73657273 
+ 1734      5C4C656E 
+ 1734      6F766F5C 
+ 1734      4465736B 
+ 1735 0620 6553656E 		.ascii	"eSensor.cydsn\000"
+ 1735      736F722E 
+ 1735      63796473 
+ 1735      6E00
+ 1736              	.LASF21:
+ 1737 062e 6E6F6973 		.ascii	"noiseTh\000"
+ 1737      65546800 
+ 1738              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

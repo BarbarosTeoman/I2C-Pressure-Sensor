@@ -1,0 +1,6 @@
+C:\Users\Lenovo\Desktop\PressureSensor\PressureSensor.cydsn\PressureSensor.cyprj|39850d1e-192a-40e6-9197-7c38b18252b5
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|592b9387-044a-4f18-a660-a1660a22e9f3
+C:\Users\Lenovo\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|0af56d5a-6804-4432-91d5-acab2a7ebe4d
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|76d20029-880e-43f0-ae60-3386cfee8d14
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|600f46ca-9eb3-4c20-9623-0308ced93780
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|9c7df8fd-432c-4a50-a678-0ac054a0b89d
